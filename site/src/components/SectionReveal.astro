@@ -1,0 +1,70 @@
+---
+interface Props {
+  direction?: 'up' | 'left' | 'right' | 'scale';
+  delay?: number;
+  class?: string;
+  tag?: string;
+}
+const { direction = 'up', delay = 0, class: className = '', tag = 'div' } = Astro.props;
+const Tag = tag as any;
+---
+
+<Tag
+  class:list={["reveal-element opacity-0", className]}
+  data-direction={direction}
+  data-delay={delay}
+>
+  <slot />
+</Tag>
+
+<script>
+  function initRevealElements() {
+    const elements = document.querySelectorAll('.reveal-element');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const el = entry.target as HTMLElement;
+            const delay = parseInt(el.dataset.delay || '0');
+            setTimeout(() => {
+              el.classList.add('revealed');
+            }, delay);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    elements.forEach((el) => observer.observe(el));
+  }
+
+  // Run on initial load and on Astro page navigations
+  initRevealElements();
+  document.addEventListener('astro:page-load', initRevealElements);
+</script>
+
+<style is:global>
+  .reveal-element {
+    transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+    will-change: opacity, transform;
+  }
+
+  .reveal-element[data-direction="up"] {
+    transform: translateY(4rem);
+  }
+  .reveal-element[data-direction="left"] {
+    transform: translateX(-4rem);
+  }
+  .reveal-element[data-direction="right"] {
+    transform: translateX(4rem);
+  }
+  .reveal-element[data-direction="scale"] {
+    transform: scale(0.95);
+  }
+
+  .reveal-element.revealed {
+    opacity: 1 !important;
+    transform: translateY(0) translateX(0) scale(1) !important;
+  }
+</style>

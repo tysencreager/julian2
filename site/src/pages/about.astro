@@ -1,0 +1,195 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Marquee from '../components/Marquee.astro';
+import SectionReveal from '../components/SectionReveal.astro';
+---
+
+<BaseLayout title="About — Julian Dismute">
+  <Nav dark />
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="relative min-h-[70vh] flex items-end bg-black overflow-hidden">
+    <!-- Background image -->
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1544427920-c49ccfaf8c56?auto=format&fit=crop&q=80&w=2000"
+        alt="Julian Dismute"
+        class="w-full h-full object-cover opacity-40 grayscale"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+      <SectionReveal>
+        <p class="text-brand-orange text-xs tracking-[0.3em] uppercase font-bold mb-4">About</p>
+        <h1 class="text-5xl md:text-8xl lg:text-9xl font-display uppercase tracking-tight text-white leading-[0.85]">
+          He does not speak <br class="hidden md:block" />
+          <span class="text-brand-orange">to entertain.</span> <br class="hidden md:block" />
+          He speaks to <br class="hidden md:block" />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">awaken.</span>
+        </h1>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <Marquee words={['ADVERSITY', 'CALLING', 'PURPOSE', 'OBEDIENCE', 'TRANSFORMATION']} />
+
+  <!-- ═══════════════ INTRO ═══════════════ -->
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+      <div class="md:col-span-5">
+        <SectionReveal direction="left">
+          <div class="relative overflow-hidden aspect-[3/4] group">
+            <img
+              src="https://images.unsplash.com/photo-1544427920-c49ccfaf8c56?auto=format&fit=crop&q=80&w=800"
+              alt="Julian Dismute portrait"
+              class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              loading="lazy"
+            />
+            <div class="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-brand-orange"></div>
+          </div>
+        </SectionReveal>
+      </div>
+
+      <div class="md:col-span-7 space-y-8">
+        <SectionReveal>
+          <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
+            Julian Dismute is a Christian speaker, minister, and digital communicator committed to proclaiming the gospel of Jesus Christ and equipping believers to live with conviction and courageous obedience.
+          </p>
+        </SectionReveal>
+        <SectionReveal delay={100}>
+          <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
+            Shaped by adversity and sustained by the faithfulness of God, Julian speaks with clarity, authenticity, and a deep passion to see lives transformed by the power of Jesus. He does not speak to entertain — he speaks to awaken.
+          </p>
+        </SectionReveal>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FROM ADVERSITY TO CALLING ═══════════════ -->
+  <section class="bg-zinc-950 text-white py-24 md:py-32 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+      <span class="text-[10rem] md:text-[18rem] font-display text-white whitespace-nowrap leading-none">CALLING</span>
+    </div>
+
+    <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+      <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
+        <div class="md:col-span-4">
+          <SectionReveal direction="left">
+            <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight leading-none mb-6">
+              From <br />Adversity <br />
+              <span class="text-brand-orange">To Calling</span>
+            </h2>
+            <div class="w-16 h-1 bg-brand-orange"></div>
+          </SectionReveal>
+        </div>
+
+        <div class="md:col-span-8 space-y-8">
+          <SectionReveal delay={100}>
+            <p class="text-lg md:text-xl font-light text-zinc-400 leading-relaxed">
+              Julian's story began with significant hardship. After losing both of his parents at a young age, he was forced to navigate life and identity through seasons of pain, uncertainty, and struggle.
+            </p>
+          </SectionReveal>
+          <SectionReveal delay={200}>
+            <p class="text-lg md:text-xl font-light text-zinc-400 leading-relaxed">
+              Sports became an important outlet and identity during those years, shaping his discipline, resilience, and leadership.
+            </p>
+          </SectionReveal>
+          <SectionReveal delay={300}>
+            <div class="p-8 md:p-12 border-l-4 border-brand-orange bg-white/5">
+              <p class="text-xl md:text-2xl font-medium text-white leading-snug">
+                In 2016, a defining encounter with Jesus Christ transformed Julian's life and clarified his calling. What once felt like loss became purpose, and what once felt like confusion became direction.
+              </p>
+            </div>
+          </SectionReveal>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MINISTRY & LEADERSHIP ═══════════════ -->
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+      <div>
+        <SectionReveal>
+          <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight leading-none mb-6">
+            Ministry <br />&amp; Leadership
+          </h2>
+          <div class="brand-rule mb-8"></div>
+        </SectionReveal>
+
+        <SectionReveal delay={100}>
+          <p class="text-lg font-light text-zinc-600 leading-relaxed mb-6">
+            Julian currently serves with the Fellowship of Christian Athletes (FCA), where he works closely with coaches and athletes, mentoring students, leading Bible studies, and helping young leaders live out their faith with courage and conviction.
+          </p>
+        </SectionReveal>
+        <SectionReveal delay={200}>
+          <p class="text-lg font-light text-zinc-600 leading-relaxed mb-6">
+            He regularly preaches at his local church and is invited to speak at churches, youth camps, conferences, and special events across the country.
+          </p>
+        </SectionReveal>
+        <SectionReveal delay={300}>
+          <div class="p-6 bg-black text-white border-l-4 border-brand-orange">
+            <p class="text-lg font-medium">
+              Whether speaking to a congregation, a group of student-athletes, or a leadership gathering, Julian's message remains consistent: Faith must be lived with conviction, not just professed.
+            </p>
+          </div>
+        </SectionReveal>
+      </div>
+
+      <SectionReveal direction="right">
+        <div class="relative overflow-hidden aspect-square group">
+          <img
+            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+            alt="Ministry leadership"
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            loading="lazy"
+          />
+          <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-brand-orange"></div>
+        </div>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <!-- ═══════════════ FAMILY & LIFE ═══════════════ -->
+  <section class="bg-zinc-100 py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-4xl mx-auto text-center">
+      <SectionReveal>
+        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-8">Family &amp; Life</h2>
+      </SectionReveal>
+      <SectionReveal delay={100}>
+        <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed mb-8">
+          Julian has been married to his wife for 13 years, and together they are raising their son Kyrie in West Des Moines, Iowa.
+        </p>
+      </SectionReveal>
+      <SectionReveal delay={200}>
+        <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
+          Outside of ministry, Julian enjoys spending time with his family, watching his son play basketball, golfing, and connecting with friends.
+        </p>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="bg-black text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+      <span class="text-[14rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">AWAKEN</span>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <SectionReveal>
+        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-6">
+          Ready to bring <span class="text-brand-orange">bold faith</span> to your event?
+        </h2>
+      </SectionReveal>
+      <SectionReveal delay={200}>
+        <a href="/booking" class="inline-block px-12 py-5 bg-brand-orange text-white font-bold tracking-[0.2em] uppercase hover:bg-orange-700 transition-colors mt-4">
+          Invite Julian to Speak
+        </a>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

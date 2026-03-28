@@ -1,0 +1,267 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import HeroMosaic from '../components/HeroMosaic.astro';
+import Marquee from '../components/Marquee.astro';
+import SectionReveal from '../components/SectionReveal.astro';
+---
+
+<BaseLayout title="Julian Dismute — Christian Speaker & Minister">
+  <Nav dark />
+
+  <!-- ═══════════════ HERO ═══════════════ -->
+  <section class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
+    <HeroMosaic />
+
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto text-white mt-20">
+      <SectionReveal direction="scale">
+        <h1 class="text-6xl md:text-8xl lg:text-[10rem] font-display uppercase tracking-tight leading-[0.85] mb-6">
+          Julian <br />
+          <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Dismute</span>
+        </h1>
+      </SectionReveal>
+
+      <SectionReveal delay={200}>
+        <p class="text-xl md:text-3xl font-light tracking-wide mb-8 text-zinc-300">
+          Christian Speaker &amp; Minister
+        </p>
+      </SectionReveal>
+
+      <SectionReveal delay={400}>
+        <p class="text-lg md:text-xl font-medium max-w-2xl mx-auto mb-12 text-zinc-400 leading-relaxed">
+          Calling this generation to live with conviction, follow Jesus without compromise, and lead with courageous obedience.
+        </p>
+      </SectionReveal>
+
+      <SectionReveal delay={600}>
+        <div class="flex flex-col md:flex-row items-center justify-center gap-6">
+          <a href="/booking" class="w-full md:w-auto px-8 py-4 bg-brand-orange text-white font-bold tracking-[0.15em] uppercase hover:bg-orange-700 transition-colors flex items-center justify-center gap-3">
+            Invite to Speak
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+          <a href="/ministry" class="w-full md:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all flex items-center justify-center gap-3">
+            Explore Ministry
+          </a>
+        </div>
+      </SectionReveal>
+    </div>
+
+    <!-- Scroll indicator -->
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40">
+      <span class="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
+      <div class="w-px h-8 bg-white/30 animate-pulse"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ MARQUEE ═══════════════ -->
+  <Marquee />
+
+  <!-- ═══════════════ IDENTITY / MISSION ═══════════════ -->
+  <section id="identity" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16 items-start">
+      <div class="md:col-span-5 md:sticky md:top-32">
+        <SectionReveal direction="left">
+          <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight leading-none mb-6">
+            Beyond <br />Passive <br />Belief.
+          </h2>
+          <div class="brand-rule mb-8"></div>
+          <p class="text-sm tracking-[0.2em] uppercase text-zinc-400 font-medium">Identity &amp; Mission</p>
+        </SectionReveal>
+      </div>
+
+      <div class="md:col-span-7 space-y-10 text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
+        <SectionReveal delay={100}>
+          <p>
+            <strong class="font-bold text-black">Julian Dismute</strong> is a Christian speaker and minister committed to proclaiming the gospel of Jesus Christ and equipping believers to live with conviction in a culture of compromise.
+          </p>
+        </SectionReveal>
+
+        <SectionReveal delay={200}>
+          <p>
+            Through preaching, teaching, and digital ministry, he challenges students, athletes, leaders, and churches to move beyond passive belief and into active, disciplined obedience.
+          </p>
+        </SectionReveal>
+
+        <SectionReveal delay={300}>
+          <div class="p-8 md:p-12 bg-black text-white border-l-8 border-brand-orange relative overflow-hidden group">
+            <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange rounded-full blur-[80px] opacity-30 group-hover:opacity-60 transition-opacity duration-700"></div>
+            <h3 class="text-xs font-bold uppercase tracking-[0.2em] text-brand-orange mb-4">The Mission</h3>
+            <p class="text-xl md:text-2xl font-medium leading-snug relative z-10">
+              To strengthen believers. To equip leaders. To call this generation to bold, uncompromising faith in Jesus Christ.
+            </p>
+          </div>
+        </SectionReveal>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ QUOTE BREAK ═══════════════ -->
+  <section class="py-20 md:py-28 bg-zinc-950 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+      <span class="text-[12rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">TRANSFORM</span>
+    </div>
+    <div class="max-w-4xl mx-auto px-6 md:px-12 text-center relative z-10">
+      <SectionReveal>
+        <blockquote class="text-3xl md:text-5xl font-display uppercase tracking-tight text-white leading-tight">
+          "Faith is not meant to be comfortable. <br class="hidden md:block" />
+          <span class="text-brand-orange">It is meant to transform you.</span>"
+        </blockquote>
+        <p class="mt-6 text-zinc-500 tracking-[0.2em] uppercase text-sm">— Julian Dismute</p>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <!-- ═══════════════ SPEAKING PREVIEW ═══════════════ -->
+  <section id="speaking" class="bg-zinc-950 text-white py-24 md:py-32">
+    <div class="max-w-7xl mx-auto px-6 md:px-12">
+      <SectionReveal>
+        <div class="flex flex-col md:flex-row justify-between items-end mb-16 md:mb-20 border-b border-zinc-800 pb-12">
+          <div>
+            <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-4">Speaking</h2>
+            <p class="text-lg md:text-xl text-zinc-400 max-w-xl font-light">
+              Structured, Scripture-centered, and focused on real transformation — not just inspiration.
+            </p>
+          </div>
+          <a href="/speaking" class="mt-8 md:mt-0 flex items-center gap-2 text-brand-orange hover:text-orange-400 uppercase tracking-[0.15em] font-bold text-sm transition-colors group">
+            View Topics
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="group-hover:translate-x-1 transition-transform"><path d="m9 18 6-6-6-6"/></svg>
+          </a>
+        </div>
+      </SectionReveal>
+    </div>
+
+    <div class="border-t border-zinc-800 flex flex-col w-full">
+      {[
+        {
+          title: "Churches & Congregations",
+          desc: "Confronting complacency and calling congregations to live out their faith.",
+          img: "https://images.unsplash.com/photo-1438283173091-5dbf5c5a3206?q=80&w=2000&auto=format&fit=crop"
+        },
+        {
+          title: "Youth & Students",
+          desc: "Equipping the next generation to follow Jesus without compromise.",
+          img: "https://images.unsplash.com/photo-1528605248644-14dd04022da1?q=80&w=2000&auto=format&fit=crop"
+        },
+        {
+          title: "Leadership & Conferences",
+          desc: "Forming serious followers of Christ in any setting, from sanctuaries to gyms.",
+          img: "https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2000&auto=format&fit=crop"
+        }
+      ].map((item, idx) => (
+        <SectionReveal delay={idx * 100}>
+          <div class="group relative border-b border-zinc-800 w-full overflow-hidden">
+            <!-- Background image on hover -->
+            <div class="absolute inset-0 z-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <img src={item.img} alt={item.title} class="w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" />
+              <div class="absolute inset-0 bg-brand-orange/80 mix-blend-multiply"></div>
+            </div>
+
+            <div class="relative z-10 px-6 md:px-12 py-14 md:py-20 max-w-7xl mx-auto flex flex-col md:flex-row md:items-center justify-between gap-6 transition-transform duration-500 group-hover:translate-x-4">
+              <h3 class="text-3xl md:text-5xl lg:text-6xl font-display uppercase tracking-tight text-zinc-500 group-hover:text-white transition-colors duration-300">
+                {item.title}
+              </h3>
+              <p class="text-base md:text-lg text-zinc-600 group-hover:text-white/90 font-light max-w-md transition-colors duration-300">
+                {item.desc}
+              </p>
+            </div>
+          </div>
+        </SectionReveal>
+      ))}
+    </div>
+  </section>
+
+  <!-- ═══════════════ MINISTRY PREVIEW ═══════════════ -->
+  <section id="ministry" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <SectionReveal>
+      <div class="text-center mb-20 md:mb-24">
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-6">The Ministry</h2>
+        <p class="text-xl md:text-2xl font-light text-zinc-500 max-w-2xl mx-auto">
+          This is not about hype. This is about hunger for God.
+        </p>
+      </div>
+    </SectionReveal>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16 items-center">
+      <SectionReveal direction="right" class="order-2 md:order-1">
+        <div class="relative overflow-hidden aspect-[4/5] group">
+          <img
+            src="https://images.unsplash.com/photo-1510936111840-65e151ad71bb?q=80&w=2090&auto=format&fit=crop"
+            alt="Worship Gathering"
+            class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+            loading="lazy"
+          />
+          <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-700"></div>
+          <!-- Corner accent -->
+          <div class="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-brand-orange"></div>
+        </div>
+      </SectionReveal>
+
+      <div class="order-1 md:order-2 space-y-10">
+        <SectionReveal delay={100}>
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-brand-orange"><path d="M8.5 14.5A2.5 2.5 0 0 0 11 12c0-1.38-.5-2-1-3-1.072-2.143-.224-4.054 2-6 .5 2.5 2 4.9 4 6.5 2 1.6 3 3.5 3 5.5a7 7 0 1 1-14 0c0-1.153.433-2.294 1-3a2.5 2.5 0 0 0 2.5 2.5z"/></svg>
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight">Blaze Collective</h3>
+            </div>
+            <p class="text-lg text-zinc-600 font-light leading-relaxed">
+              Julian leads and serves through Blaze Collective, a grassroots movement focused on building community, strengthening faith, and cultivating lives marked by obedience to Jesus.
+            </p>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={300}>
+          <div class="pl-8 border-l-2 border-brand-orange">
+            <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight mb-4">Wildfire Gatherings</h3>
+            <p class="text-lg text-zinc-600 font-light leading-relaxed">
+              Out of this movement, Wildfire gatherings were created — spaces where people come together for worship, the Word, and a clear call to deeper faith.
+            </p>
+          </div>
+        </SectionReveal>
+
+        <SectionReveal delay={500}>
+          <a href="/ministry" class="inline-block px-8 py-4 bg-black text-white font-bold tracking-[0.15em] uppercase hover:bg-brand-orange transition-colors">
+            Explore The Ministry
+          </a>
+        </SectionReveal>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="bg-brand-orange text-white py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden">
+      <span class="text-[14rem] md:text-[22rem] font-display uppercase tracking-tight text-white whitespace-nowrap leading-none">FAITH</span>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center relative z-10">
+      <SectionReveal>
+        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-8 leading-tight">
+          Following Jesus is not casual. <br />
+          <span class="text-black">It requires surrender.</span>
+        </h2>
+      </SectionReveal>
+
+      <SectionReveal delay={200}>
+        <p class="text-lg md:text-xl font-medium mb-16 text-white/90 max-w-2xl mx-auto leading-relaxed">
+          Through both in-person ministry and digital platforms, Julian has reached thousands of people — from students and athletes to church leaders — calling people to deeper faith, stronger conviction, and real transformation.
+        </p>
+      </SectionReveal>
+
+      <SectionReveal delay={400}>
+        <div class="bg-white text-black p-10 md:p-14 relative overflow-hidden">
+          <div class="absolute top-0 right-0 w-24 h-24 bg-brand-orange/10"></div>
+          <h3 class="text-3xl md:text-4xl font-display uppercase mb-4">Invite Julian to Speak</h3>
+          <p class="text-zinc-600 mb-8 max-w-xl mx-auto">
+            If you're looking for a speaker who brings clarity, conviction, and a strong call to obedience, Julian would be honored to serve your church, event, or organization.
+          </p>
+          <a href="/booking" class="inline-block px-12 py-5 bg-black text-white font-bold tracking-[0.2em] uppercase hover:bg-brand-orange hover:scale-105 transition-all duration-300">
+            Book Julian Now
+          </a>
+        </div>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

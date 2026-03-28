@@ -1,0 +1,168 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+import Marquee from '../components/Marquee.astro';
+import SectionReveal from '../components/SectionReveal.astro';
+
+const topics = [
+  {
+    title: "Courageous Obedience",
+    description: "Julian confronts the gap between belief and behavior, challenging audiences to move beyond verbal agreement and into disciplined, daily obedience to Christ.",
+    number: "01"
+  },
+  {
+    title: "Conviction in a Compromising Culture",
+    description: "This message addresses identity, moral courage, and leadership integrity, helping audiences stand firm without retreat or arrogance.",
+    number: "02"
+  },
+  {
+    title: "From Comfort to Calling",
+    description: "Julian calls believers back to seriousness, unity, and wholehearted devotion to Christ — helping audiences rediscover purpose and live with renewed urgency.",
+    number: "03"
+  }
+];
+
+const audiences = [
+  { label: "Church Services", icon: "🔥" },
+  { label: "Youth Events & Camps", icon: "⚡" },
+  { label: "Christian Conferences", icon: "✦" },
+  { label: "Leadership Gatherings", icon: "◆" },
+  { label: "Christian Schools & Campus Ministries", icon: "▪" },
+  { label: "Athletic Programs & FCA Events", icon: "●" },
+];
+---
+
+<BaseLayout title="Speaking — Julian Dismute">
+  <Nav dark />
+
+  <!-- ═══════════════ PAGE HERO ═══════════════ -->
+  <section class="relative min-h-[70vh] flex items-end bg-black overflow-hidden">
+    <div class="absolute inset-0">
+      <img
+        src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=2000"
+        alt="Stage silhouette"
+        class="w-full h-full object-cover opacity-30 grayscale"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
+      <SectionReveal>
+        <p class="text-brand-orange text-xs tracking-[0.3em] uppercase font-bold mb-4">Speaking</p>
+        <h1 class="text-5xl md:text-8xl lg:text-9xl font-display uppercase tracking-tight text-white leading-[0.85] mb-6">
+          Not just <br class="hidden md:block" />
+          inspiration. <br class="hidden md:block" />
+          <span class="text-brand-orange">Transformation.</span>
+        </h1>
+      </SectionReveal>
+      <SectionReveal delay={200}>
+        <p class="text-lg md:text-xl text-zinc-400 font-light max-w-2xl">
+          Julian partners with pastors and ministry leaders to strengthen believers, challenge complacency, and call the Church to courageous obedience to Jesus Christ.
+        </p>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <Marquee words={['COURAGEOUS', 'OBEDIENCE', 'CONVICTION', 'CALLING', 'SURRENDER']} />
+
+  <!-- ═══════════════ SPEAKING TOPICS ═══════════════ -->
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+    <SectionReveal>
+      <div class="mb-16 md:mb-20">
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-4">Speaking Topics</h2>
+        <p class="text-lg text-zinc-500 font-light max-w-2xl">
+          His teaching is rooted in Scripture, structured with clarity, and focused on building conviction that lasts beyond the moment.
+        </p>
+      </div>
+    </SectionReveal>
+
+    <div class="space-y-0">
+      {topics.map((topic, idx) => (
+        <SectionReveal delay={idx * 100}>
+          <div class="group border-t border-zinc-200 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start hover:bg-zinc-50 transition-colors duration-300 -mx-6 md:-mx-12 px-6 md:px-12">
+            <div class="md:col-span-1">
+              <span class="text-brand-orange font-display text-4xl md:text-5xl">{topic.number}</span>
+            </div>
+            <div class="md:col-span-5">
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors">{topic.title}</h3>
+            </div>
+            <div class="md:col-span-6">
+              <p class="text-lg text-zinc-600 font-light leading-relaxed">{topic.description}</p>
+            </div>
+          </div>
+        </SectionReveal>
+      ))}
+      <div class="border-t border-zinc-200"></div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ AUDIENCES ═══════════════ -->
+  <section class="bg-zinc-950 text-white py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-7xl mx-auto">
+      <SectionReveal>
+        <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-4">Who Julian Serves</h2>
+        <p class="text-lg text-zinc-400 font-light max-w-xl mb-16">
+          From Sunday morning to Friday night, from sanctuaries to stadiums.
+        </p>
+      </SectionReveal>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {audiences.map((item, idx) => (
+          <SectionReveal delay={idx * 80}>
+            <div class="border border-zinc-800 p-8 md:p-10 hover:border-brand-orange hover:bg-brand-orange/5 transition-all duration-300 group">
+              <span class="text-brand-orange text-2xl mb-4 block">{item.icon}</span>
+              <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors">{item.label}</h3>
+            </div>
+          </SectionReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WHAT TO EXPECT ═══════════════ -->
+  <section class="py-24 md:py-32 px-6 md:px-12">
+    <div class="max-w-4xl mx-auto">
+      <SectionReveal>
+        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-12 text-center">What to Expect</h2>
+      </SectionReveal>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          { title: "Scripture-Centered", desc: "Every message is rooted in and built upon God's Word — not trends, not hype." },
+          { title: "Direct & Unapologetic", desc: "Julian doesn't water down the gospel. He brings clarity and conviction to every room." },
+          { title: "Structured for Impact", desc: "Messages are crafted for real transformation — not just an emotional moment." },
+          { title: "Pastoral Heart", desc: "Bold delivery meets genuine care for people and partnership with leadership." },
+        ].map((item, idx) => (
+          <SectionReveal delay={idx * 100}>
+            <div class="p-8 bg-white border-l-4 border-brand-orange">
+              <h3 class="text-xl font-bold uppercase tracking-wide mb-3">{item.title}</h3>
+              <p class="text-zinc-600 font-light leading-relaxed">{item.desc}</p>
+            </div>
+          </SectionReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ CTA ═══════════════ -->
+  <section class="bg-brand-orange text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 overflow-hidden">
+      <span class="text-[14rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">SPEAK</span>
+    </div>
+    <div class="relative z-10 max-w-3xl mx-auto">
+      <SectionReveal>
+        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-6 leading-tight">
+          Bring conviction <br />to your next event.
+        </h2>
+      </SectionReveal>
+      <SectionReveal delay={200}>
+        <a href="/booking" class="inline-block px-12 py-5 bg-black text-white font-bold tracking-[0.2em] uppercase hover:bg-zinc-900 transition-colors mt-4">
+          Submit a Speaking Request
+        </a>
+      </SectionReveal>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>
