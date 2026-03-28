@@ -14,7 +14,7 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="relative h-screen flex items-center justify-center overflow-hidden bg-black">
     <HeroMosaic />
 
-    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto text-white mt-20">
+    <div class="relative z-10 text-center px-4 max-w-5xl mx-auto text-white mt-40 md:mt-48">
       <SectionReveal direction="scale">
         <h1 class="text-6xl md:text-8xl lg:text-[10rem] font-display uppercase tracking-tight leading-[0.85] mb-6">
           Julian <br />
@@ -47,11 +47,6 @@ import SectionReveal from '../components/SectionReveal.astro';
       </SectionReveal>
     </div>
 
-    <!-- Scroll indicator -->
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 text-white/40">
-      <span class="text-[10px] tracking-[0.3em] uppercase">Scroll</span>
-      <div class="w-px h-8 bg-white/30 animate-pulse"></div>
-    </div>
   </section>
 
   <!-- ═══════════════ MARQUEE ═══════════════ -->
