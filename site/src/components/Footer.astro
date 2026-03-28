@@ -1,0 +1,66 @@
+---
+const year = new Date().getFullYear();
+const links = [
+  { href: '/about', label: 'About' },
+  { href: '/speaking', label: 'Speaking' },
+  { href: '/ministry', label: 'Ministry' },
+  { href: '/media', label: 'Media' },
+  { href: '/booking', label: 'Booking' },
+];
+const socials = [
+  { label: 'TikTok', href: '#' },
+  { label: 'YouTube', href: '#' },
+  { label: 'Instagram', href: '#' },
+  { label: 'Facebook', href: '#' },
+];
+---
+
+<footer class="bg-zinc-950 text-zinc-500 pt-20 pb-8 relative overflow-hidden">
+  <!-- Large background text -->
+  <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+    <span class="text-[18rem] md:text-[28rem] font-display tracking-tight text-white whitespace-nowrap leading-none">DISMUTE</span>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16">
+      <!-- Brand -->
+      <div>
+        <a href="/" class="font-display text-4xl text-white tracking-tight uppercase block mb-4">J. Dismute</a>
+        <p class="text-sm leading-relaxed max-w-xs">
+          Calling this generation to live with conviction, follow Jesus without compromise, and lead with courageous obedience.
+        </p>
+      </div>
+
+      <!-- Links -->
+      <div>
+        <h4 class="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Navigate</h4>
+        <ul class="space-y-3">
+          {links.map((link) => (
+            <li>
+              <a href={link.href} class="text-sm hover:text-brand-orange transition-colors">{link.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+
+      <!-- Socials -->
+      <div>
+        <h4 class="text-white font-bold text-xs tracking-[0.2em] uppercase mb-6">Connect</h4>
+        <ul class="space-y-3">
+          {socials.map((s) => (
+            <li>
+              <a href={s.href} class="text-sm hover:text-brand-orange transition-colors">{s.label}</a>
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+
+    <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+      <p class="text-xs tracking-widest uppercase">&copy; {year} Julian Dismute Ministries. All rights reserved.</p>
+      <a href="/booking" class="text-xs tracking-widest uppercase text-brand-orange hover:text-orange-400 transition-colors">
+        Invite Julian to Speak &rarr;
+      </a>
+    </div>
+  </div>
+</footer>
