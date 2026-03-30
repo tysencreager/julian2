@@ -92,7 +92,7 @@ import SectionReveal from '../components/SectionReveal.astro';
   </section>
 
   <!-- ═══════════════ QUOTE BREAK ═══════════════ -->
-  <section class="py-20 md:py-28 bg-zinc-950 relative overflow-hidden">
+  <section class="py-20 md:py-28 bg-zinc-950 relative overflow-hidden section-fade-dark-top">
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
       <span class="text-[12rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">TRANSFORM</span>
     </div>
@@ -131,7 +131,8 @@ import SectionReveal from '../components/SectionReveal.astro';
         {
           title: "Churches & Congregations",
           desc: "Confronting complacency and calling congregations to live out their faith.",
-          img: "/images/IMG_2.png"
+          img: "/images/IMG_2.png",
+          position: "object-bottom"
         },
         {
           title: "Youth & Students",
@@ -148,7 +149,7 @@ import SectionReveal from '../components/SectionReveal.astro';
           <div class="group relative border-b border-zinc-800 w-full overflow-hidden">
             <!-- Background image on hover -->
             <div class="absolute inset-0 z-0 bg-black opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-              <img src={item.img} alt={item.title} class="w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" />
+              <img src={item.img} alt={item.title} class:list={["w-full h-full object-cover opacity-40 grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out", item.position || ""]} loading="lazy" />
               <div class="absolute inset-0 bg-brand-orange/80 mix-blend-multiply"></div>
             </div>
 
@@ -167,7 +168,7 @@ import SectionReveal from '../components/SectionReveal.astro';
   </section>
 
   <!-- ═══════════════ MINISTRY PREVIEW ═══════════════ -->
-  <section id="ministry" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+  <section id="ministry" class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto section-fade-top">
     <SectionReveal>
       <div class="text-center mb-20 md:mb-24">
         <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-6">The Ministry</h2>
