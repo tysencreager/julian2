@@ -14,7 +14,7 @@ import SectionReveal from '../components/SectionReveal.astro';
     <!-- Background image -->
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1544427920-c49ccfaf8c56?auto=format&fit=crop&q=80&w=2000"
+        src="/images/IMG_17.JPG"
         alt="Julian Dismute"
         class="w-full h-full object-cover opacity-40 grayscale"
       />
@@ -43,7 +43,7 @@ import SectionReveal from '../components/SectionReveal.astro';
         <SectionReveal direction="left">
           <div class="relative overflow-hidden aspect-[3/4] group">
             <img
-              src="https://images.unsplash.com/photo-1544427920-c49ccfaf8c56?auto=format&fit=crop&q=80&w=800"
+              src="/images/773E940A-1381-4DE9-BB9C-C73F56E4933B.jpg"
               alt="Julian Dismute portrait"
               class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
               loading="lazy"
@@ -142,7 +142,7 @@ import SectionReveal from '../components/SectionReveal.astro';
       <SectionReveal direction="right">
         <div class="relative overflow-hidden aspect-square group">
           <img
-            src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=1000"
+            src="/images/IMG_111.JPG"
             alt="Ministry leadership"
             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
             loading="lazy"
@@ -155,19 +155,44 @@ import SectionReveal from '../components/SectionReveal.astro';
 
   <!-- ═══════════════ FAMILY & LIFE ═══════════════ -->
   <section class="bg-zinc-100 py-24 md:py-32 px-6 md:px-12">
-    <div class="max-w-4xl mx-auto text-center">
-      <SectionReveal>
-        <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-8">Family &amp; Life</h2>
-      </SectionReveal>
-      <SectionReveal delay={100}>
-        <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed mb-8">
-          Julian has been married to his wife for 13 years, and together they are raising their son Kyrie in West Des Moines, Iowa.
-        </p>
-      </SectionReveal>
-      <SectionReveal delay={200}>
-        <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
-          Outside of ministry, Julian enjoys spending time with his family, watching his son play basketball, golfing, and connecting with friends.
-        </p>
+    <div class="max-w-5xl mx-auto">
+      <div class="text-center mb-16">
+        <SectionReveal>
+          <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-8">Family &amp; Life</h2>
+        </SectionReveal>
+        <SectionReveal delay={100}>
+          <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed mb-8">
+            Julian has been married to his wife for 13 years, and together they are raising their son Kyrie in West Des Moines, Iowa.
+          </p>
+        </SectionReveal>
+        <SectionReveal delay={200}>
+          <p class="text-lg md:text-xl font-light text-zinc-600 leading-relaxed">
+            Outside of ministry, Julian enjoys spending time with his family, watching his son play basketball, golfing, and connecting with friends.
+          </p>
+        </SectionReveal>
+      </div>
+
+      <SectionReveal delay={300}>
+        <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_1.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_2.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_14.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_15.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_16.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+          <div class="aspect-square overflow-hidden">
+            <img src="/images/IMG_11.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
+          </div>
+        </div>
       </SectionReveal>
     </div>
   </section>
