@@ -10,6 +10,7 @@
 
   --animate-marquee: marquee 60s linear infinite;
   --animate-marquee-slow: marquee 90s linear infinite;
+  --animate-gradient-shift: gradient-shift 6s ease infinite;
   --animate-float: float 6s ease-in-out infinite;
 
   @keyframes marquee {
@@ -20,6 +21,12 @@
   @keyframes float {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-20px); }
+  }
+
+  @keyframes gradient-shift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
   }
 }
 
