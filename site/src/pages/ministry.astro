@@ -13,7 +13,7 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="relative min-h-[70vh] flex items-end bg-black overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="/images/IMG_8827.JPG"
+        src="/images/IMG_12.png"
         alt="Worship gathering"
         class="w-full h-full object-cover opacity-30 grayscale"
       />
@@ -73,7 +73,7 @@ import SectionReveal from '../components/SectionReveal.astro';
         <div>
           <SectionReveal>
             <div class="flex items-center gap-4 mb-6">
-              <img src="/images/2BE2AA52-32E7-4B0D-A1F0-8C58F022B001.png" alt="Blaze Collective" class="h-10 md:h-14 w-auto" />
+              <img src="/images/blaze-logo-white.png" alt="Blaze Collective" class="h-16 md:h-24 w-auto" />
               <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight">Blaze Collective</h2>
             </div>
           </SectionReveal>
@@ -106,7 +106,7 @@ import SectionReveal from '../components/SectionReveal.astro';
         <SectionReveal direction="right">
           <div class="relative overflow-hidden aspect-[4/5] group">
             <img
-              src="/images/880BB71B-B296-472E-9CC8-11C57ACFC48A.png"
+              src="/images/DSC_0740.JPG"
               alt="Community gathering"
               class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
               loading="lazy"
@@ -121,9 +121,10 @@ import SectionReveal from '../components/SectionReveal.astro';
 
   <!-- ═══════════════ WILDFIRE ═══════════════ -->
   <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-      <SectionReveal direction="left">
-        <div class="relative overflow-hidden aspect-square group">
+    <div class="flex flex-col gap-16">
+      <!-- Landscape photo spanning full width -->
+      <SectionReveal>
+        <div class="relative overflow-hidden aspect-[21/9] group">
           <img
             src="/images/IMG_13.png"
             alt="Wildfire gathering"
@@ -135,28 +136,31 @@ import SectionReveal from '../components/SectionReveal.astro';
         </div>
       </SectionReveal>
 
-      <div>
-        <SectionReveal>
-          <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-6">
-            Wildfire
-          </h2>
-          <div class="brand-rule mb-8"></div>
-        </SectionReveal>
+      <!-- Text content below -->
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
+        <div>
+          <SectionReveal>
+            <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-6">
+              Wildfire
+            </h2>
+            <div class="brand-rule mb-8"></div>
+          </SectionReveal>
 
-        <SectionReveal delay={100}>
-          <p class="text-lg font-light text-zinc-600 leading-relaxed mb-6">
-            Wildfire is a revival gathering hosted by Blaze Collective. What began in 2024 as a step of obedience has grown into a space where people can encounter God in a real and personal way.
-          </p>
-        </SectionReveal>
+          <SectionReveal delay={100}>
+            <p class="text-lg font-light text-zinc-600 leading-relaxed mb-6">
+              Wildfire is a revival gathering hosted by Blaze Collective. What began in 2024 as a step of obedience has grown into a space where people can encounter God in a real and personal way.
+            </p>
+          </SectionReveal>
 
-        <SectionReveal delay={200}>
-          <p class="text-lg font-light text-zinc-600 leading-relaxed mb-8">
-            These nights are centered on worship, the preaching of the Word, and a call to deeper faith. No hype. No performance. Just hunger for God and a call to obedience.
-          </p>
-        </SectionReveal>
+          <SectionReveal delay={200}>
+            <p class="text-lg font-light text-zinc-600 leading-relaxed">
+              These nights are centered on worship, the preaching of the Word, and a call to deeper faith. No hype. No performance. Just hunger for God and a call to obedience.
+            </p>
+          </SectionReveal>
+        </div>
 
         <SectionReveal delay={300}>
-          <div class="p-8 bg-black text-white border-l-4 border-brand-orange">
+          <div class="p-8 bg-black text-white border-l-4 border-brand-orange h-fit">
             <p class="text-xl font-display uppercase tracking-wide mb-2 text-brand-orange">The reality:</p>
             <p class="text-lg font-medium leading-snug">
               People don't just attend. They respond. This is not routine church. This is revival.
