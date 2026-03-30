@@ -24,12 +24,12 @@ const topics = [
 ];
 
 const audiences = [
-  { label: "Church Services", icon: "🔥" },
-  { label: "Youth Events & Camps", icon: "⚡" },
-  { label: "Christian Conferences", icon: "✦" },
-  { label: "Leadership Gatherings", icon: "◆" },
-  { label: "Christian Schools & Campus Ministries", icon: "▪" },
-  { label: "Athletic Programs & FCA Events", icon: "●" },
+  { label: "Church Services", img: "/images/IMG_4449.JPG", desc: "Julian partners with pastors to deliver messages that challenge congregations to move beyond Sunday routines and into a faith that transforms every area of life." },
+  { label: "Youth Events & Camps", img: "/images/DSC_8353.JPG", desc: "From summer camps to weekend retreats, Julian connects with young people where they are and calls them to a faith that stands firm under pressure." },
+  { label: "Christian Conferences", img: "/images/IMG_1920.JPG", desc: "Julian brings conviction and clarity to multi-day conferences, equipping attendees with biblical truth that fuels lasting transformation." },
+  { label: "Leadership Gatherings", img: "/images/IMG_15.png", desc: "Whether addressing pastors, ministry leaders, or organizational teams, Julian challenges leaders to lead with integrity, humility, and courageous obedience." },
+  { label: "Christian Schools & Campus Ministries", img: "/images/IMG_19.JPG", desc: "Julian speaks into the lives of students on campuses and in Christian schools, calling the next generation to anchor their identity in Christ." },
+  { label: "Athletic Programs & FCA Events", img: "/images/C14A3117.JPG", desc: "Through his work with FCA and athletic communities, Julian reaches coaches and athletes with a message of discipline, character, and faith-driven excellence." },
 ];
 ---
 
@@ -37,10 +37,10 @@ const audiences = [
   <Nav dark />
 
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
-  <section class="relative min-h-[70vh] flex items-end bg-black overflow-hidden">
+  <section class="relative min-h-[70vh] flex items-end pt-28 bg-black overflow-hidden">
     <div class="absolute inset-0">
       <img
-        src="https://images.unsplash.com/photo-1478147427282-58a87a120781?auto=format&fit=crop&q=80&w=2000"
+        src="/images/IMG_15.png"
         alt="Stage silhouette"
         class="w-full h-full object-cover opacity-30 grayscale"
       />
@@ -110,9 +110,15 @@ const audiences = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {audiences.map((item, idx) => (
           <SectionReveal delay={idx * 80}>
-            <div class="border border-zinc-800 p-8 md:p-10 hover:border-brand-orange hover:bg-brand-orange/5 transition-all duration-300 group">
-              <span class="text-brand-orange text-2xl mb-4 block">{item.icon}</span>
-              <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors">{item.label}</h3>
+            <div class="relative border border-zinc-800 p-8 md:p-10 hover:border-brand-orange transition-all duration-500 group overflow-hidden min-h-[280px] flex flex-col justify-end">
+              <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                <img src={item.img} alt={item.label} class="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" />
+                <div class="absolute inset-0 bg-black/70"></div>
+              </div>
+              <div class="relative z-10">
+                <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors mb-3">{item.label}</h3>
+                <p class="text-sm text-zinc-500 group-hover:text-zinc-300 font-light leading-relaxed transition-colors duration-300">{item.desc}</p>
+              </div>
             </div>
           </SectionReveal>
         ))}
