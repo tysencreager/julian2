@@ -42,8 +42,8 @@ const links = [
       </a>
     </div>
 
-    <!-- Mobile Hamburger -->
-    <button id="mobile-toggle" class="lg:hidden flex flex-col gap-1.5 w-8 h-8 items-center justify-center" aria-label="Toggle menu">
+    <!-- Mobile Hamburger - 44px minimum touch target -->
+    <button id="mobile-toggle" class="lg:hidden relative flex flex-col gap-1.5 w-11 h-11 items-center justify-center" aria-label="Toggle menu" aria-expanded="false">
       <span class="block w-6 h-0.5 bg-current transition-all duration-300 origin-center" id="bar1"></span>
       <span class="block w-6 h-0.5 bg-current transition-all duration-300" id="bar2"></span>
       <span class="block w-4 h-0.5 bg-current transition-all duration-300 origin-center ml-auto" id="bar3"></span>
@@ -51,12 +51,12 @@ const links = [
   </div>
 
   <!-- Mobile Menu -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden">
+  <div id="mobile-menu" class="fixed inset-0 bg-black z-40 flex flex-col items-center justify-center opacity-0 pointer-events-none transition-opacity duration-500 lg:hidden overscroll-none">
     <div class="flex flex-col items-center gap-8">
       {links.map((link) => (
         <a
           href={link.href}
-          class="text-white text-3xl font-display tracking-wider uppercase hover:text-brand-orange transition-colors"
+          class="text-white text-3xl font-display tracking-wider uppercase hover:text-brand-orange transition-colors py-2 px-4"
         >
           {link.label}
         </a>
@@ -104,6 +104,11 @@ const links = [
       menu.classList.toggle('opacity-0', !menuOpen);
       menu.classList.toggle('pointer-events-none', !menuOpen);
     }
+    // Lock/unlock body scroll
+    document.body.classList.toggle('menu-open', menuOpen);
+    // Update aria state
+    toggle.setAttribute('aria-expanded', String(menuOpen));
+
     const bar1 = document.getElementById('bar1');
     const bar2 = document.getElementById('bar2');
     const bar3 = document.getElementById('bar3');
@@ -118,6 +123,26 @@ const links = [
       bar3?.classList.remove('-rotate-45', '-translate-y-2', 'w-6');
       updateNav();
     }
+  });
+
+  // Close mobile menu on link click
+  menu?.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (menuOpen) {
+        menuOpen = false;
+        menu.classList.add('opacity-0');
+        menu.classList.add('pointer-events-none');
+        document.body.classList.remove('menu-open');
+        toggle?.setAttribute('aria-expanded', 'false');
+        const bar1 = document.getElementById('bar1');
+        const bar2 = document.getElementById('bar2');
+        const bar3 = document.getElementById('bar3');
+        bar1?.classList.remove('rotate-45', 'translate-y-1');
+        bar2?.classList.remove('opacity-0');
+        bar3?.classList.remove('-rotate-45', '-translate-y-2', 'w-6');
+        updateNav();
+      }
+    });
   });
 
   window.addEventListener('scroll', updateNav);

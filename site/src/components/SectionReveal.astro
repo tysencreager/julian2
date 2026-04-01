@@ -51,16 +51,31 @@ const Tag = tag as any;
   }
 
   .reveal-element[data-direction="up"] {
-    transform: translateY(4rem);
+    transform: translateY(2rem);
   }
   .reveal-element[data-direction="left"] {
-    transform: translateX(-4rem);
+    transform: translateX(-2rem);
   }
   .reveal-element[data-direction="right"] {
-    transform: translateX(4rem);
+    transform: translateX(2rem);
   }
   .reveal-element[data-direction="scale"] {
-    transform: scale(0.95);
+    transform: scale(0.97);
+  }
+
+  @media (min-width: 768px) {
+    .reveal-element[data-direction="up"] {
+      transform: translateY(4rem);
+    }
+    .reveal-element[data-direction="left"] {
+      transform: translateX(-4rem);
+    }
+    .reveal-element[data-direction="right"] {
+      transform: translateX(4rem);
+    }
+    .reveal-element[data-direction="scale"] {
+      transform: scale(0.95);
+    }
   }
 
   .reveal-element.revealed {
