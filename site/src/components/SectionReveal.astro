@@ -29,7 +29,12 @@ const Tag = tag as any;
             const delay = parseInt(el.dataset.delay || '0');
             setTimeout(() => {
               el.classList.add('revealed');
+              // Free GPU memory after animation completes
+              setTimeout(() => {
+                el.style.willChange = 'auto';
+              }, 700);
             }, delay);
+            observer.unobserve(el);
           }
         });
       },
