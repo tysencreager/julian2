@@ -53,13 +53,18 @@ const COLORS = ['bg-orange-600', 'bg-zinc-900', 'bg-black', 'bg-orange-500'];
 
     cells.forEach(randomizeCell);
 
+    // Slower animation on mobile for better performance
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
+    const interval = isMobile ? 1200 : 400;
+    const maxChanges = isMobile ? 1 : 3;
+
     setInterval(() => {
-      const numChanges = Math.floor(Math.random() * 3) + 2;
+      const numChanges = Math.floor(Math.random() * maxChanges) + 1;
       for (let i = 0; i < numChanges; i++) {
         const idx = Math.floor(Math.random() * cells.length);
         randomizeCell(cells[idx]);
       }
-    }, 400);
+    }, interval);
   }
 
   initMosaic();
