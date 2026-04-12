@@ -40,6 +40,7 @@ import SectionReveal from '../components/SectionReveal.astro';
     <!-- Background video -->
     <div class="absolute inset-0 z-0">
       <video
+        id="notroutine-bg-video"
         autoplay
         muted
         loop
@@ -221,3 +222,8 @@ import SectionReveal from '../components/SectionReveal.astro';
 
   <Footer />
 </BaseLayout>
+
+<script>
+  const bgVideo = document.getElementById('notroutine-bg-video');
+  if (bgVideo) bgVideo.playbackRate = 0.5;
+</script>
