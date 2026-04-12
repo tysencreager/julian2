@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
 
@@ -180,7 +181,8 @@ const socials = [
 
   <!-- ═══════════════ CTA ═══════════════ -->
   <section class="bg-black text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+    <CtaMosaic />
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden z-[1]">
       <span class="text-[14rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">MEDIA</span>
     </div>
     <div class="relative z-10 max-w-3xl mx-auto">

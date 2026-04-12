@@ -1,0 +1,90 @@
+---
+const HERO_IMAGES = [
+  "/images/0M4A9206.JPG",
+  "/images/C14A3117.JPG",
+  "/images/DSC_0629.JPG",
+  "/images/DSC_0740.JPG",
+  "/images/DSC_8353.JPG",
+  "/images/IMG_1920.JPG",
+  "/images/IMG_8820.JPG",
+  "/images/IMG_19.JPG",
+  "/images/DSC_7859.jpg",
+  "/images/IMG_4449.JPG",
+];
+const COLORS = ['bg-brand-orange', 'bg-zinc-900', 'bg-black', 'bg-zinc-800'];
+---
+
+<div class="absolute inset-0 z-0 cta-mosaic-wrapper">
+  <div class="absolute inset-0 grid grid-cols-4 md:grid-cols-6 grid-rows-3 md:grid-rows-2 gap-0 opacity-20" id="cta-mosaic-grid">
+    {Array.from({ length: 12 }).map((_, i) => (
+      <div class="cta-mosaic-cell w-full h-full relative overflow-hidden bg-black" data-index={i}>
+      </div>
+    ))}
+  </div>
+</div>
+
+<script define:vars={{ HERO_IMAGES, COLORS }}>
+  function initCtaMosaics() {
+    const grids = document.querySelectorAll('#cta-mosaic-grid');
+    if (!grids.length) return;
+
+    // Pre-load images
+    HERO_IMAGES.forEach((src) => {
+      const img = new Image();
+      img.src = src;
+    });
+
+    grids.forEach((grid, gridIdx) => {
+      // Give each grid a unique id so multiple work on the same page
+      grid.id = `cta-mosaic-grid-${gridIdx}`;
+
+      const cells = grid.querySelectorAll('.cta-mosaic-cell');
+
+      function randomizeCell(cell) {
+        const isImage = Math.random() > 0.35;
+        cell.innerHTML = '';
+        cell.className = 'cta-mosaic-cell w-full h-full relative overflow-hidden';
+
+        if (isImage) {
+          cell.classList.add('bg-black');
+          const img = document.createElement('img');
+          img.src = HERO_IMAGES[Math.floor(Math.random() * HERO_IMAGES.length)];
+          img.alt = '';
+          img.className = 'absolute inset-0 w-full h-full object-cover grayscale opacity-60';
+          img.loading = 'eager';
+          cell.appendChild(img);
+        } else {
+          const color = COLORS[Math.floor(Math.random() * COLORS.length)];
+          cell.classList.add(color);
+        }
+      }
+
+      cells.forEach(randomizeCell);
+
+      const isMobile = window.matchMedia('(max-width: 768px)').matches;
+      const interval = isMobile ? 3000 : 1200;
+
+      setInterval(() => {
+        const idx = Math.floor(Math.random() * cells.length);
+        const cell = cells[idx];
+        cell.style.opacity = '0';
+        setTimeout(() => {
+          randomizeCell(cell);
+          cell.style.opacity = '1';
+        }, 400);
+      }, interval);
+    });
+  }
+
+  if ('requestIdleCallback' in window) {
+    requestIdleCallback(initCtaMosaics);
+  } else {
+    setTimeout(initCtaMosaics, 200);
+  }
+</script>
+
+<style>
+  .cta-mosaic-cell {
+    transition: opacity 0.5s ease-in-out;
+  }
+</style>
