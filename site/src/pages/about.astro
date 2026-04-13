@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
+import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
 ---
@@ -37,7 +38,19 @@ import SectionReveal from '../components/SectionReveal.astro';
   <Marquee words={['ADVERSITY', 'CALLING', 'PURPOSE', 'OBEDIENCE', 'TRANSFORMATION']} />
 
   <!-- ═══════════════ INTRO ═══════════════ -->
-  <section class="py-24 md:py-32 px-6 md:px-12 max-w-7xl mx-auto">
+  <section class="py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
+    <!-- Background photo -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/about-background.JPG"
+        alt=""
+        class="w-full h-full object-cover opacity-25"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-white/40"></div>
+    </div>
+
+    <div class="max-w-7xl mx-auto relative z-10">
     <div class="grid grid-cols-1 md:grid-cols-12 gap-12 md:gap-16">
       <div class="md:col-span-5">
         <SectionReveal direction="left">
@@ -66,11 +79,22 @@ import SectionReveal from '../components/SectionReveal.astro';
         </SectionReveal>
       </div>
     </div>
+    </div>
   </section>
 
   <!-- ═══════════════ FROM ADVERSITY TO CALLING ═══════════════ -->
   <section class="bg-zinc-950 text-white py-24 md:py-32 relative overflow-hidden section-fade-dark-top">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+    <!-- Background photo -->
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/abouts-fromadversitytocalling.jpeg"
+        alt=""
+        class="w-full h-full object-cover object-top opacity-40"
+        loading="lazy"
+      />
+      <div class="absolute inset-0 bg-zinc-950/40"></div>
+    </div>
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden z-[1]">
       <span class="text-[10rem] md:text-[18rem] font-display text-white whitespace-nowrap leading-none">CALLING</span>
     </div>
 
@@ -199,7 +223,8 @@ import SectionReveal from '../components/SectionReveal.astro';
 
   <!-- ═══════════════ CTA ═══════════════ -->
   <section class="bg-black text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
-    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden">
+    <CtaMosaic />
+    <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-[0.03] overflow-hidden z-[1]">
       <span class="text-[14rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">AWAKEN</span>
     </div>
     <div class="relative z-10 max-w-3xl mx-auto">
