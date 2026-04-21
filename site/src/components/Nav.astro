@@ -26,8 +26,8 @@ const links = [
         <a
           href={link.href}
           class:list={[
-            "font-medium text-xs tracking-[0.2em] uppercase transition-colors hover:text-brand-orange",
-            currentPath === link.href ? "text-brand-orange" : ""
+            "font-medium text-xs tracking-[0.2em] uppercase transition-colors hover:text-brand-gold",
+            currentPath === link.href ? "text-brand-gold" : ""
           ]}
         >
           {link.label}
@@ -35,7 +35,7 @@ const links = [
       ))}
       <a
         href="/booking"
-        class="px-6 py-3 bg-brand-orange text-white font-bold text-xs tracking-[0.15em] uppercase rounded-none hover:bg-orange-700 transition-all inline-flex items-center gap-2"
+        class="px-6 py-3 bg-brand-gold text-white font-bold text-xs tracking-[0.15em] uppercase rounded-none hover:bg-brand-gold-dark transition-all inline-flex items-center gap-2"
       >
         Book Julian
         <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
@@ -56,7 +56,7 @@ const links = [
       {links.map((link) => (
         <a
           href={link.href}
-          class="text-white text-3xl font-display tracking-wider uppercase hover:text-brand-orange transition-colors py-2 px-4"
+          class="text-white text-3xl font-display tracking-wider uppercase hover:text-brand-gold transition-colors py-2 px-4"
         >
           {link.label}
         </a>

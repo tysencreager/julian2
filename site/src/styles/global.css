@@ -4,7 +4,9 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Bebas Neue", "Inter", sans-serif;
 
-  --color-brand-orange: #d4520e;
+  --color-brand-gold: #c9a961;
+  --color-brand-gold-dark: #9c8142;
+  --color-brand-gold-light: #e0c88a;
   --color-brand-cream: #ecebe8;
   --color-brand-dark: #0a0a0a;
 
@@ -68,7 +70,7 @@
   }
 
   ::selection {
-    background-color: var(--color-brand-orange);
+    background-color: var(--color-brand-gold);
     color: white;
   }
 }
@@ -110,8 +112,41 @@
 .brand-rule {
   width: 5rem;
   height: 0.5rem;
-  background-color: var(--color-brand-orange);
+  background-color: var(--color-brand-gold);
   border: none;
+}
+
+/* Wildfire closing statement — gold-foil gradient with gentle shimmer */
+.wildfire-statement {
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-gold-dark) 0%,
+    var(--color-brand-gold) 25%,
+    var(--color-brand-gold-light) 50%,
+    var(--color-brand-gold) 75%,
+    var(--color-brand-gold-dark) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: wildfire-shimmer 8s ease-in-out infinite;
+}
+
+.wildfire-statement-accent {
+  font-style: italic;
+}
+
+@keyframes wildfire-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wildfire-statement {
+    animation: none;
+  }
 }
 
 /* Soft gradient transitions between sections */
