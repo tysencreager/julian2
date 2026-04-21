@@ -166,31 +166,50 @@ import SectionReveal from '../components/SectionReveal.astro';
       <div class="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-16">
         <div>
           <SectionReveal>
-            <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight mb-6">
-              Wildfire
-            </h2>
+            <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
+              <img src="/images/wildfire-logo.png" alt="Wildfire" class="h-16 sm:h-20 md:h-24 w-auto" />
+              <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight">
+                Wildfire
+              </h2>
+            </div>
             <div class="brand-rule mb-8"></div>
           </SectionReveal>
 
           <SectionReveal delay={100}>
             <p class="text-lg font-light text-zinc-600 leading-relaxed mb-6">
-              Wildfire is a revival gathering hosted by Blaze Collective. What began in 2024 as a step of obedience has grown into a space where people can encounter God in a real and personal way.
+              Wildfire is a revival gathering hosted by Julian and his team — created as a space where people don't just attend, but meet God. What began in 2024 as a step of obedience has grown into a place where lives are laid down, hearts are awakened, and people encounter the presence of God in a real and personal way.
             </p>
           </SectionReveal>
 
           <SectionReveal delay={200}>
-            <p class="text-lg font-light text-zinc-600 leading-relaxed">
-              These nights are centered on worship, the preaching of the Word, and a call to deeper faith. No hype. No performance. Just hunger for God and a call to obedience.
+            <p class="text-lg font-light text-zinc-600 leading-relaxed mb-8">
+              These nights are centered on worship, the preaching of the Word, and a clear call to respond.
             </p>
+          </SectionReveal>
+
+          <SectionReveal delay={300}>
+            <div class="space-y-1 font-display uppercase tracking-wide text-2xl md:text-3xl text-black leading-tight">
+              <p>No hype.</p>
+              <p>No performance.</p>
+              <p>Just the altar.</p>
+              <p class="text-brand-gold pt-4">A place of surrender.</p>
+              <p class="text-brand-gold">A place of encounter.</p>
+              <p class="text-brand-gold">A place where God moves.</p>
+            </div>
           </SectionReveal>
         </div>
 
         <SectionReveal delay={300}>
           <div class="p-8 bg-black text-white border-l-4 border-brand-gold h-fit">
-            <p class="text-xl font-display uppercase tracking-wide mb-2 text-brand-gold">The reality:</p>
-            <p class="text-lg font-medium leading-snug">
-              People don't just attend. They respond. This is not routine church. This is revival.
-            </p>
+            <p class="text-xl font-display uppercase tracking-wide mb-4 text-brand-gold">The Invitation:</p>
+            <div class="space-y-2 text-lg font-medium leading-snug">
+              <p>People don't just attend. They respond.</p>
+              <p>God meets people here.</p>
+              <p>This is not routine church.</p>
+              <p>This is surrender.</p>
+              <p>This is encounter.</p>
+              <p class="pt-3 text-brand-gold font-display uppercase tracking-wide">We build the altar — God sends the fire.</p>
+            </div>
           </div>
         </SectionReveal>
       </div>

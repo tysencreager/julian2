@@ -8,7 +8,7 @@ import SectionReveal from '../components/SectionReveal.astro';
 
 const videoPlaceholders = [
   { title: "Featured Speaking Clip", category: "Featured" },
-  { title: "Church Message Clip", category: "Church" },
+  { title: "Church Message Clip", category: "Church", video: "/images/preaching-clip.mp4" },
   { title: "Youth Event / Camp Clip", category: "Youth" },
   { title: "Conference Clip", category: "Conference" },
   { title: "FCA / Athlete Talk", category: "Athletics" },
@@ -16,10 +16,11 @@ const videoPlaceholders = [
 ];
 
 const socials = [
-  { platform: "TikTok", handle: "@juliandismute", href: "#", desc: "Quick hits of truth. Raw, unfiltered, no fluff." },
-  { platform: "YouTube", handle: "Julian Dismute", href: "#", desc: "Full messages, teaching series, and a look behind the scenes." },
-  { platform: "Instagram", handle: "@juliandismute", href: "#", desc: "Daily encouragement, reels, and real community." },
-  { platform: "Facebook", handle: "Julian Dismute", href: "#", desc: "Longer content, event updates, and what's happening in the ministry." },
+  { platform: "TikTok", handle: "@iamjuliandismute", href: "https://www.tiktok.com/@iamjuliandismute", desc: "Quick hits of truth. Raw, unfiltered, no fluff." },
+  { platform: "YouTube", handle: "@julianspeakslife", href: "https://www.youtube.com/@julianspeakslife", desc: "Full messages, teaching series, and a look behind the scenes." },
+  { platform: "Instagram", handle: "@iamjuliandismute", href: "https://www.instagram.com/iamjuliandismute/", desc: "Daily encouragement, reels, and real community." },
+  { platform: "Instagram — Wildfire", handle: "@wildfire_dsm", href: "https://www.instagram.com/wildfire_dsm", desc: "The gathering built for encounter. Worship, word, and revival." },
+  { platform: "Facebook", handle: "Julian Dismute", href: "https://www.facebook.com/st.julian.dismute/", desc: "Longer content, event updates, and what's happening in the ministry." },
 ];
 ---
 
@@ -68,25 +69,37 @@ const socials = [
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
       {videoPlaceholders.map((video, idx) => (
         <SectionReveal delay={idx * 80}>
-          <div class="group relative aspect-video bg-zinc-900 overflow-hidden cursor-pointer">
-            <!-- Placeholder pattern -->
-            <div class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-950"></div>
+          <div class="group relative aspect-video bg-zinc-900 overflow-hidden">
+            {video.video ? (
+              <video
+                src={video.video}
+                controls
+                preload="metadata"
+                playsinline
+                class="absolute inset-0 w-full h-full object-cover bg-black"
+              ></video>
+            ) : (
+              <>
+                <!-- Placeholder pattern -->
+                <div class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-950"></div>
 
-            <!-- Play button -->
-            <div class="absolute inset-0 flex items-center justify-center z-10">
-              <div class="w-16 h-16 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-              </div>
-            </div>
+                <!-- Play button -->
+                <div class="absolute inset-0 flex items-center justify-center z-10">
+                  <div class="w-16 h-16 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                  </div>
+                </div>
+
+                <!-- Hover overlay -->
+                <div class="absolute inset-0 bg-brand-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+              </>
+            )}
 
             <!-- Label -->
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-10">
+            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none">
               <span class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold">{video.category}</span>
               <h3 class="text-white font-display text-xl uppercase tracking-tight">{video.title}</h3>
             </div>
-
-            <!-- Hover overlay -->
-            <div class="absolute inset-0 bg-brand-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </SectionReveal>
       ))}
@@ -163,7 +176,7 @@ const socials = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {socials.map((social, idx) => (
           <SectionReveal delay={idx * 100}>
-            <a href={social.href} class="group block border border-zinc-800 p-8 md:p-10 hover:border-brand-gold transition-all duration-300">
+            <a href={social.href} target="_blank" rel="noopener noreferrer" class="group block border border-zinc-800 p-8 md:p-10 hover:border-brand-gold transition-all duration-300">
               <div class="flex items-start justify-between mb-4">
                 <div>
                   <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:text-brand-gold transition-colors">{social.platform}</h3>

@@ -8,10 +8,11 @@ const links = [
   { href: '/booking', label: 'Booking' },
 ];
 const socials = [
-  { label: 'TikTok', href: '#' },
-  { label: 'YouTube', href: '#' },
-  { label: 'Instagram', href: '#' },
-  { label: 'Facebook', href: '#' },
+  { label: 'TikTok', href: 'https://www.tiktok.com/@iamjuliandismute' },
+  { label: 'YouTube', href: 'https://www.youtube.com/@julianspeakslife' },
+  { label: 'Instagram', href: 'https://www.instagram.com/iamjuliandismute/' },
+  { label: 'Instagram — Wildfire', href: 'https://www.instagram.com/wildfire_dsm' },
+  { label: 'Facebook', href: 'https://www.facebook.com/st.julian.dismute/' },
 ];
 ---
 
@@ -51,7 +52,7 @@ const socials = [
         <ul class="space-y-3">
           {socials.map((s) => (
             <li>
-              <a href={s.href} class="text-sm hover:text-brand-gold transition-colors">{s.label}</a>
+              <a href={s.href} target="_blank" rel="noopener noreferrer" class="text-sm hover:text-brand-gold transition-colors">{s.label}</a>
             </li>
           ))}
         </ul>
