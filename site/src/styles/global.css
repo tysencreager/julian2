@@ -116,6 +116,39 @@
   border: none;
 }
 
+/* Wildfire closing statement — gold-foil gradient with gentle shimmer */
+.wildfire-statement {
+  background: linear-gradient(
+    100deg,
+    var(--color-brand-gold-dark) 0%,
+    var(--color-brand-gold) 25%,
+    var(--color-brand-gold-light) 50%,
+    var(--color-brand-gold) 75%,
+    var(--color-brand-gold-dark) 100%
+  );
+  background-size: 200% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: wildfire-shimmer 8s ease-in-out infinite;
+}
+
+.wildfire-statement-accent {
+  font-style: italic;
+}
+
+@keyframes wildfire-shimmer {
+  0%, 100% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wildfire-statement {
+    animation: none;
+  }
+}
+
 /* Soft gradient transitions between sections */
 .section-fade-top {
   position: relative;

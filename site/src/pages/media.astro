@@ -8,7 +8,7 @@ import SectionReveal from '../components/SectionReveal.astro';
 
 const videoPlaceholders = [
   { title: "Featured Speaking Clip", category: "Featured" },
-  { title: "Church Message Clip", category: "Church", video: "/images/preaching-clip.mp4" },
+  { title: "Church Message Clip", category: "Church", video: "/images/preaching-clip.mp4", poster: "/images/preaching-clip-poster.jpg" },
   { title: "Youth Event / Camp Clip", category: "Youth" },
   { title: "Conference Clip", category: "Conference" },
   { title: "FCA / Athlete Talk", category: "Athletics" },
@@ -73,8 +73,9 @@ const socials = [
             {video.video ? (
               <video
                 src={video.video}
+                poster={video.poster}
                 controls
-                preload="metadata"
+                preload="none"
                 playsinline
                 class="absolute inset-0 w-full h-full object-cover bg-black"
               ></video>

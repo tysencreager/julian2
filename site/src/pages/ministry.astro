@@ -208,11 +208,21 @@ import SectionReveal from '../components/SectionReveal.astro';
               <p>This is not routine church.</p>
               <p>This is surrender.</p>
               <p>This is encounter.</p>
-              <p class="pt-3 text-brand-gold font-display uppercase tracking-wide">We build the altar — God sends the fire.</p>
             </div>
           </div>
         </SectionReveal>
       </div>
+
+      <!-- Statement line -->
+      <SectionReveal delay={200}>
+        <div class="relative pt-8 md:pt-16 text-center">
+          <p class="wildfire-statement font-display uppercase tracking-tight leading-[0.95] text-[2.75rem] sm:text-6xl md:text-7xl lg:text-8xl">
+            We build the altar —<br class="hidden sm:block" />
+            <span class="wildfire-statement-accent">God sends the fire.</span>
+          </p>
+          <div class="mx-auto mt-8 h-1 w-24 bg-brand-gold"></div>
+        </div>
+      </SectionReveal>
     </div>
   </section>
 
