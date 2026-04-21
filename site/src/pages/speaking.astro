@@ -50,11 +50,11 @@ const audiences = [
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
       <SectionReveal>
-        <p class="text-brand-orange text-xs tracking-[0.3em] uppercase font-bold mb-4">Speaking</p>
+        <p class="text-brand-gold text-xs tracking-[0.3em] uppercase font-bold mb-4">Speaking</p>
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-display uppercase tracking-tight text-white leading-[0.85] mb-6">
           Not just <br class="hidden md:block" />
           inspiration. <br class="hidden md:block" />
-          <span class="text-brand-orange">Transformation.</span>
+          <span class="text-brand-gold">Transformation.</span>
         </h1>
       </SectionReveal>
       <SectionReveal delay={200}>
@@ -98,10 +98,10 @@ const audiences = [
         <SectionReveal delay={idx * 100}>
           <div class="group border-t border-zinc-200 py-12 md:py-16 grid grid-cols-1 md:grid-cols-12 gap-6 md:gap-12 items-start hover:bg-white/60 transition-colors duration-300 -mx-6 md:-mx-12 px-6 md:px-12">
             <div class="md:col-span-1">
-              <span class="text-brand-orange font-display text-4xl md:text-5xl">{topic.number}</span>
+              <span class="text-brand-gold font-display text-4xl md:text-5xl">{topic.number}</span>
             </div>
             <div class="md:col-span-5">
-              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors">{topic.title}</h3>
+              <h3 class="text-3xl md:text-4xl font-display uppercase tracking-tight group-hover:text-brand-gold transition-colors">{topic.title}</h3>
             </div>
             <div class="md:col-span-6">
               <p class="text-lg text-zinc-600 font-light leading-relaxed">{topic.description}</p>
@@ -127,13 +127,13 @@ const audiences = [
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {audiences.map((item, idx) => (
           <SectionReveal delay={idx * 80}>
-            <div class="relative border border-zinc-800 p-8 md:p-10 hover:border-brand-orange transition-all duration-500 group overflow-hidden min-h-[280px] flex flex-col justify-end">
+            <div class="relative border border-zinc-800 p-8 md:p-10 hover:border-brand-gold transition-all duration-500 group overflow-hidden min-h-[280px] flex flex-col justify-end">
               <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                 <img src={item.img} alt={item.label} class="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" />
                 <div class="absolute inset-0 bg-black/70"></div>
               </div>
               <div class="relative z-10">
-                <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors mb-3">{item.label}</h3>
+                <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-gold transition-colors mb-3">{item.label}</h3>
                 <p class="text-sm text-zinc-500 group-hover:text-zinc-300 font-light leading-relaxed transition-colors duration-300">{item.desc}</p>
               </div>
             </div>
@@ -169,7 +169,7 @@ const audiences = [
           { title: "Pastoral Heart", desc: "Bold doesn't mean careless. Julian brings fire and genuine love for the people in the room." },
         ].map((item, idx) => (
           <SectionReveal delay={idx * 100}>
-            <div class="p-8 bg-white/90 backdrop-blur-sm border-l-4 border-brand-orange shadow-sm">
+            <div class="p-8 bg-white/90 backdrop-blur-sm border-l-4 border-brand-gold shadow-sm">
               <h3 class="text-xl font-bold uppercase tracking-wide mb-3">{item.title}</h3>
               <p class="text-zinc-600 font-light leading-relaxed">{item.desc}</p>
             </div>
@@ -180,7 +180,7 @@ const audiences = [
   </section>
 
   <!-- ═══════════════ CTA ═══════════════ -->
-  <section class="bg-brand-orange text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
+  <section class="bg-brand-gold text-white py-24 md:py-32 px-6 md:px-12 text-center relative overflow-hidden">
     <CtaMosaic />
     <div class="absolute inset-0 flex items-center justify-center pointer-events-none opacity-10 overflow-hidden z-[1]">
       <span class="text-[14rem] md:text-[20rem] font-display text-white whitespace-nowrap leading-none">SPEAK</span>

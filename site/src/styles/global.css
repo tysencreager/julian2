@@ -4,7 +4,9 @@
   --font-sans: "Inter", system-ui, sans-serif;
   --font-display: "Bebas Neue", "Inter", sans-serif;
 
-  --color-brand-orange: #d4520e;
+  --color-brand-gold: #c9a961;
+  --color-brand-gold-dark: #9c8142;
+  --color-brand-gold-light: #e0c88a;
   --color-brand-cream: #ecebe8;
   --color-brand-dark: #0a0a0a;
 
@@ -68,7 +70,7 @@
   }
 
   ::selection {
-    background-color: var(--color-brand-orange);
+    background-color: var(--color-brand-gold);
     color: white;
   }
 }
@@ -110,7 +112,7 @@
 .brand-rule {
   width: 5rem;
   height: 0.5rem;
-  background-color: var(--color-brand-orange);
+  background-color: var(--color-brand-gold);
   border: none;
 }
 

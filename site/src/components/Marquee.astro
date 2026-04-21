@@ -7,12 +7,12 @@ const { words = ['SURRENDER', 'CONVICTION', 'COURAGE', 'OBEDIENCE', 'FAITH'], cl
 const repeated = [...words, ...words, ...words, ...words];
 ---
 
-<div class:list={["bg-brand-orange text-white py-4 overflow-hidden flex whitespace-nowrap select-none", className]}>
+<div class:list={["bg-brand-gold text-white py-4 overflow-hidden flex whitespace-nowrap select-none", className]}>
   <div class="animate-marquee inline-flex items-center shrink-0">
     {repeated.map((word) => (
       <span class="font-sans text-sm md:text-base font-medium tracking-[0.25em] uppercase px-6 inline-flex items-center gap-6">
         {word}
-        <span class="text-orange-300 text-xs">&bull;</span>
+        <span class="text-brand-gold-light text-xs">&bull;</span>
       </span>
     ))}
   </div>
@@ -20,7 +20,7 @@ const repeated = [...words, ...words, ...words, ...words];
     {repeated.map((word) => (
       <span class="font-sans text-sm md:text-base font-medium tracking-[0.25em] uppercase px-6 inline-flex items-center gap-6">
         {word}
-        <span class="text-orange-300 text-xs">&bull;</span>
+        <span class="text-brand-gold-light text-xs">&bull;</span>
       </span>
     ))}
   </div>

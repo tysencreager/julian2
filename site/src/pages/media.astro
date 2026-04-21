@@ -39,10 +39,10 @@ const socials = [
 
     <div class="relative z-10 max-w-7xl mx-auto px-6 md:px-12 pb-16 md:pb-24 w-full">
       <SectionReveal>
-        <p class="text-brand-orange text-xs tracking-[0.3em] uppercase font-bold mb-4">Media</p>
+        <p class="text-brand-gold text-xs tracking-[0.3em] uppercase font-bold mb-4">Media</p>
         <h1 class="text-5xl md:text-8xl lg:text-9xl font-display uppercase tracking-tight text-white leading-[0.85] mb-6">
           See the message. <br class="hidden md:block" />
-          <span class="text-brand-orange">Experience</span> <br class="hidden md:block" />
+          <span class="text-brand-gold">Experience</span> <br class="hidden md:block" />
           the impact.
         </h1>
       </SectionReveal>
@@ -74,19 +74,19 @@ const socials = [
 
             <!-- Play button -->
             <div class="absolute inset-0 flex items-center justify-center z-10">
-              <div class="w-16 h-16 bg-brand-orange flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+              <div class="w-16 h-16 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
               </div>
             </div>
 
             <!-- Label -->
             <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-10">
-              <span class="text-brand-orange text-[10px] tracking-[0.2em] uppercase font-bold">{video.category}</span>
+              <span class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold">{video.category}</span>
               <h3 class="text-white font-display text-xl uppercase tracking-tight">{video.title}</h3>
             </div>
 
             <!-- Hover overlay -->
-            <div class="absolute inset-0 bg-brand-orange/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <div class="absolute inset-0 bg-brand-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
           </div>
         </SectionReveal>
       ))}
@@ -163,13 +163,13 @@ const socials = [
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {socials.map((social, idx) => (
           <SectionReveal delay={idx * 100}>
-            <a href={social.href} class="group block border border-zinc-800 p-8 md:p-10 hover:border-brand-orange transition-all duration-300">
+            <a href={social.href} class="group block border border-zinc-800 p-8 md:p-10 hover:border-brand-gold transition-all duration-300">
               <div class="flex items-start justify-between mb-4">
                 <div>
-                  <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:text-brand-orange transition-colors">{social.platform}</h3>
+                  <h3 class="text-2xl md:text-3xl font-display uppercase tracking-tight group-hover:text-brand-gold transition-colors">{social.platform}</h3>
                   <span class="text-zinc-500 text-sm">{social.handle}</span>
                 </div>
-                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 group-hover:text-brand-orange group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-zinc-600 group-hover:text-brand-gold group-hover:translate-x-1 group-hover:-translate-y-1 transition-all"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
               </div>
               <p class="text-zinc-500 font-light">{social.desc}</p>
             </a>
@@ -188,11 +188,11 @@ const socials = [
     <div class="relative z-10 max-w-3xl mx-auto">
       <SectionReveal>
         <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight mb-6 leading-tight">
-          Want Julian at <span class="text-brand-orange">your event?</span>
+          Want Julian at <span class="text-brand-gold">your event?</span>
         </h2>
       </SectionReveal>
       <SectionReveal delay={200}>
-        <a href="/booking" class="inline-block px-12 py-5 bg-brand-orange text-white font-bold tracking-[0.2em] uppercase hover:bg-orange-700 transition-colors mt-4">
+        <a href="/booking" class="inline-block px-12 py-5 bg-brand-gold text-white font-bold tracking-[0.2em] uppercase hover:bg-brand-gold-dark transition-colors mt-4">
           Book Julian
         </a>
       </SectionReveal>
