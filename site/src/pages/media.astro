@@ -6,13 +6,13 @@ import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
 
-const videoPlaceholders = [
-  { title: "Featured Speaking Clip", category: "Featured" },
-  { title: "Church Message Clip", category: "Church", video: "/images/preaching-clip.mp4", poster: "/images/preaching-clip-poster.jpg" },
-  { title: "Youth Event / Camp Clip", category: "Youth" },
-  { title: "Conference Clip", category: "Conference" },
-  { title: "FCA / Athlete Talk", category: "Athletics" },
-  { title: "Short-Form Teaching", category: "Social" },
+const videos = [
+  { title: "Featured Speaking Clip", category: "Featured", youtubeId: "8L6WN2uEgHc" },
+  { title: "Church Message Clip", category: "Church", youtubeId: "4x_RtZ15k3M" },
+  { title: "Youth Event / Camp Clip", category: "Youth", youtubeId: "TW62nOyuuWk" },
+  { title: "Conference Clip", category: "Conference", youtubeId: "BqzgxqiDymM" },
+  { title: "FCA / Athlete Talk", category: "Athletics", youtubeId: "xwa_NFH3acA" },
+  { title: "Short-Form Teaching", category: "Social", youtubeId: "VYtHH4gBegs" },
 ];
 
 const socials = [
@@ -67,51 +67,54 @@ const socials = [
     </SectionReveal>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-      {videoPlaceholders.map((video, idx) => (
+      {videos.map((video, idx) => (
         <SectionReveal delay={idx * 80}>
           <div class="group relative aspect-video bg-zinc-900 overflow-hidden">
-            {video.video ? (
-              <video
-                src={video.video}
-                poster={video.poster}
-                controls
-                preload="none"
-                playsinline
-                class="absolute inset-0 w-full h-full object-cover bg-black"
-              ></video>
-            ) : (
-              <>
-                <!-- Placeholder pattern -->
-                <div class="absolute inset-0 bg-gradient-to-br from-zinc-800 to-zinc-950"></div>
-
-                <!-- Play button -->
-                <div class="absolute inset-0 flex items-center justify-center z-10">
-                  <div class="w-16 h-16 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-                  </div>
+            <button
+              type="button"
+              class="lite-yt absolute inset-0 w-full h-full block cursor-pointer"
+              data-yt-id={video.youtubeId}
+              aria-label={`Play ${video.title}`}
+            >
+              <img
+                src={`https://i.ytimg.com/vi/${video.youtubeId}/hqdefault.jpg`}
+                alt=""
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+              />
+              <div class="absolute inset-0 bg-black/30 group-hover:bg-black/10 transition-colors"></div>
+              <div class="absolute inset-0 flex items-center justify-center z-10">
+                <div class="w-16 h-16 bg-brand-gold flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="white" stroke="none"><polygon points="5 3 19 12 5 21 5 3"/></svg>
                 </div>
-
-                <!-- Hover overlay -->
-                <div class="absolute inset-0 bg-brand-gold/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-              </>
-            )}
-
-            <!-- Label -->
-            <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none">
-              <span class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold">{video.category}</span>
-              <h3 class="text-white font-display text-xl uppercase tracking-tight">{video.title}</h3>
-            </div>
+              </div>
+              <div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none text-left">
+                <span class="text-brand-gold text-[10px] tracking-[0.2em] uppercase font-bold">{video.category}</span>
+                <h3 class="text-white font-display text-xl uppercase tracking-tight">{video.title}</h3>
+              </div>
+            </button>
           </div>
         </SectionReveal>
       ))}
     </div>
-
-    <SectionReveal delay={500}>
-      <p class="text-center text-zinc-400 text-sm mt-8 italic">
-        Video content coming soon. Check back for featured speaking clips and ministry moments.
-      </p>
-    </SectionReveal>
   </section>
+
+  <script>
+    document.querySelectorAll<HTMLButtonElement>('button.lite-yt').forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.ytId;
+        if (!id) return;
+        const iframe = document.createElement('iframe');
+        iframe.src = `https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&modestbranding=1`;
+        iframe.title = 'YouTube video player';
+        iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share';
+        iframe.referrerPolicy = 'strict-origin-when-cross-origin';
+        iframe.allowFullscreen = true;
+        iframe.className = 'absolute inset-0 w-full h-full border-0';
+        btn.replaceWith(iframe);
+      });
+    });
+  </script>
 
   <!-- ═══════════════ PHOTO GALLERY ═══════════════ -->
   <section class="bg-black py-16 px-6 md:px-12">
