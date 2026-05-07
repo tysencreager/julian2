@@ -128,13 +128,13 @@ const audiences = [
         {audiences.map((item, idx) => (
           <SectionReveal delay={idx * 80}>
             <div class="relative border border-zinc-800 p-8 md:p-10 hover:border-brand-gold transition-all duration-500 group overflow-hidden min-h-[280px] flex flex-col justify-end">
-              <div class="absolute inset-0 z-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div class="absolute inset-0 z-0">
                 <img src={item.img} alt={item.label} class="w-full h-full object-cover grayscale group-hover:scale-105 transition-transform duration-[2s] ease-out" loading="lazy" />
                 <div class="absolute inset-0 bg-black/70"></div>
               </div>
               <div class="relative z-10">
-                <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight group-hover:text-brand-gold transition-colors mb-3">{item.label}</h3>
-                <p class="text-sm text-zinc-500 group-hover:text-zinc-300 font-light leading-relaxed transition-colors duration-300">{item.desc}</p>
+                <h3 class="text-xl md:text-2xl font-display uppercase tracking-tight text-white group-hover:text-brand-gold transition-colors mb-3">{item.label}</h3>
+                <p class="text-sm text-zinc-300 font-light leading-relaxed">{item.desc}</p>
               </div>
             </div>
           </SectionReveal>
