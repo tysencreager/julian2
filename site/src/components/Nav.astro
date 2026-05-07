@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import jslLogo from '../assets/images/jsl-logo.png';
+
 interface Props {
   dark?: boolean;
 }
@@ -17,7 +20,7 @@ const links = [
 <nav id="main-nav" class="fixed w-full z-50 transition-all duration-500 py-6 md:py-8" data-dark={dark}>
   <div class="max-w-7xl mx-auto px-6 md:px-12 flex justify-between items-center">
     <a href="/" class="hover:opacity-80 transition-opacity">
-      <img src="/images/JSL LOGO.png" alt="JSL Logo" class="h-10 md:h-12 w-auto" />
+      <Image src={jslLogo} alt="JSL Logo" class="h-10 md:h-12 w-auto" widths={[120, 240]} sizes="144px" loading="eager" />
     </a>
 
     <!-- Desktop Nav -->

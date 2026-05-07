@@ -19,32 +19,36 @@ const Tag = tag as any;
 
 <script>
   function initRevealElements() {
-    const elements = document.querySelectorAll('.reveal-element');
+    const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const elements = document.querySelectorAll<HTMLElement>('.reveal-element:not(.revealed)');
+
+    if (reduced) {
+      elements.forEach((el) => el.classList.add('revealed'));
+      return;
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const el = entry.target as HTMLElement;
-            const delay = parseInt(el.dataset.delay || '0');
-            setTimeout(() => {
-              el.classList.add('revealed');
-              // Free GPU memory after animation completes
-              setTimeout(() => {
-                el.style.willChange = 'auto';
-              }, 700);
-            }, delay);
-            observer.unobserve(el);
-          }
+          if (!entry.isIntersecting) return;
+          const el = entry.target as HTMLElement;
+          const delay = parseInt(el.dataset.delay || '0');
+          el.style.willChange = 'opacity, transform';
+          window.setTimeout(() => {
+            el.classList.add('revealed');
+            window.setTimeout(() => {
+              el.style.willChange = '';
+            }, 750);
+          }, delay);
+          observer.unobserve(el);
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -10% 0px' }
     );
 
     elements.forEach((el) => observer.observe(el));
   }
 
-  // Run on initial load and on Astro page navigations
   initRevealElements();
   document.addEventListener('astro:page-load', initRevealElements);
 </script>
@@ -52,7 +56,6 @@ const Tag = tag as any;
 <style is:global>
   .reveal-element {
     transition: opacity 0.7s ease-out, transform 0.7s ease-out;
-    will-change: opacity, transform;
   }
 
   .reveal-element[data-direction="up"] {
@@ -86,5 +89,11 @@ const Tag = tag as any;
   .reveal-element.revealed {
     opacity: 1 !important;
     transform: translateY(0) translateX(0) scale(1) !important;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal-element {
+      transition: none;
+    }
   }
 </style>

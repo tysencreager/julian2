@@ -1,10 +1,22 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
+import heroImg from '../assets/images/IMG_17.JPG';
+import bgIntro from '../assets/images/about-background.JPG';
+import portraitImg from '../assets/images/773E940A-1381-4DE9-BB9C-C73F56E4933B.jpg';
+import bgCalling from '../assets/images/abouts-fromadversitytocalling.jpeg';
+import ministryImg from '../assets/images/IMG_19.JPG';
+import gallery1 from '../assets/images/IMG_1.png';
+import gallery2 from '../assets/images/julian2.JPG';
+import gallery3 from '../assets/images/IMG_14.png';
+import gallery4 from '../assets/images/speaking1.JPG';
+import gallery5 from '../assets/images/IMG_16.png';
+import gallery6 from '../assets/images/IMG_4430.JPG';
 ---
 
 <BaseLayout title="About — Julian Dismute">
@@ -14,10 +26,13 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="relative min-h-[70vh] flex items-end pt-28 bg-black overflow-hidden">
     <!-- Background image -->
     <div class="absolute inset-0">
-      <img
-        src="/images/IMG_17.JPG"
+      <Image
+        src={heroImg}
         alt="Julian Dismute"
         class="w-full h-full object-cover opacity-40 grayscale"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
     </div>
@@ -41,10 +56,12 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
     <!-- Background photo -->
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/about-background.JPG"
+      <Image
+        src={bgIntro}
         alt=""
         class="w-full h-full object-cover opacity-25"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-white/40"></div>
@@ -55,10 +72,12 @@ import SectionReveal from '../components/SectionReveal.astro';
       <div class="md:col-span-5">
         <SectionReveal direction="left">
           <div class="relative overflow-hidden aspect-[3/4] group">
-            <img
-              src="/images/773E940A-1381-4DE9-BB9C-C73F56E4933B.jpg"
+            <Image
+              src={portraitImg}
               alt="Julian Dismute portrait"
               class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+              widths={[400, 720, 1080]}
+              sizes="(max-width: 768px) 100vw, 40vw"
               loading="lazy"
             />
             <div class="absolute bottom-0 left-0 w-16 h-16 border-l-4 border-b-4 border-brand-gold"></div>
@@ -86,10 +105,12 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="bg-zinc-950 text-white py-24 md:py-32 relative overflow-hidden section-fade-dark-top">
     <!-- Background photo -->
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/abouts-fromadversitytocalling.jpeg"
+      <Image
+        src={bgCalling}
         alt=""
         class="w-full h-full object-cover object-top opacity-40"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-zinc-950/40"></div>
@@ -165,10 +186,12 @@ import SectionReveal from '../components/SectionReveal.astro';
 
       <SectionReveal direction="right">
         <div class="relative overflow-hidden aspect-square group">
-          <img
-            src="/images/IMG_19.JPG"
+          <Image
+            src={ministryImg}
             alt="Ministry leadership"
             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            widths={[400, 720, 1080]}
+            sizes="(max-width: 768px) 100vw, 50vw"
             loading="lazy"
           />
           <div class="absolute top-0 right-0 w-16 h-16 border-t-4 border-r-4 border-brand-gold"></div>
@@ -198,24 +221,18 @@ import SectionReveal from '../components/SectionReveal.astro';
 
       <SectionReveal delay={300}>
         <div class="grid grid-cols-2 md:grid-cols-3 gap-4">
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_1.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/julian2.JPG" alt="Julian Dismute" class="w-full h-full object-cover transition-all duration-500" loading="lazy" />
-          </div>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_14.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/speaking1.JPG" alt="Julian Dismute" class="w-full h-full object-cover transition-all duration-500" loading="lazy" />
-          </div>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_16.png" alt="Julian Dismute" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_4430.JPG" alt="Julian Dismute" class="w-full h-full object-cover transition-all duration-500" loading="lazy" />
-          </div>
+          {[gallery1, gallery2, gallery3, gallery4, gallery5, gallery6].map((src, i) => (
+            <div class="aspect-square overflow-hidden">
+              <Image
+                src={src}
+                alt="Julian Dismute"
+                class:list={["w-full h-full object-cover transition-all duration-500", i % 2 === 0 ? "grayscale hover:grayscale-0" : ""]}
+                widths={[300, 600, 900]}
+                sizes="(max-width: 768px) 50vw, 33vw"
+                loading="lazy"
+              />
+            </div>
+          ))}
         </div>
       </SectionReveal>
     </div>

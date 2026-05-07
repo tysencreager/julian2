@@ -1,10 +1,20 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
+import heroBg from '../assets/images/DSC_0694.jpeg';
+import gal1 from '../assets/images/IMG_12.png';
+import gal2 from '../assets/images/DSC_0629.JPG';
+import gal3 from '../assets/images/gallery-b.JPG';
+import gal4 from '../assets/images/gallery-a.png';
+import gal5 from '../assets/images/C14A3117.JPG';
+import gal6 from '../assets/images/DSC_0740.JPG';
+import gal7 from '../assets/images/IMG_8827.JPG';
+import gal8 from '../assets/images/DSC_8353.JPG';
 
 const videos = [
   { title: "Featured Speaking Clip", category: "Featured", youtubeId: "8L6WN2uEgHc" },
@@ -30,10 +40,13 @@ const socials = [
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
   <section class="relative min-h-[60vh] flex items-end pt-28 bg-black overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/DSC_0694.jpeg"
+      <Image
+        src={heroBg}
         alt="Event stage"
         class="w-full h-full object-cover opacity-25 grayscale"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
     </div>
@@ -123,46 +136,20 @@ const socials = [
         <h2 class="text-4xl md:text-6xl font-display uppercase tracking-tight text-white mb-12">Gallery</h2>
       </SectionReveal>
       <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
-        <SectionReveal delay={0}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_12.png" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={80}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/DSC_0629.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={160}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/fkdgsdf.kgmlkfgjldk.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={240}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/dsfasdfl;das.png" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={320}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/C14A3117.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={400}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/DSC_0740.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={480}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/IMG_8827.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
-        <SectionReveal delay={560}>
-          <div class="aspect-square overflow-hidden">
-            <img src="/images/DSC_8353.JPG" alt="Ministry moment" class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500" loading="lazy" />
-          </div>
-        </SectionReveal>
+        {[gal1, gal2, gal3, gal4, gal5, gal6, gal7, gal8].map((src, i) => (
+          <SectionReveal delay={i * 80}>
+            <div class="aspect-square overflow-hidden">
+              <Image
+                src={src}
+                alt="Ministry moment"
+                class="w-full h-full object-cover grayscale hover:grayscale-0 transition-all duration-500"
+                widths={[300, 600, 900]}
+                sizes="(max-width: 768px) 50vw, 25vw"
+                loading="lazy"
+              />
+            </div>
+          </SectionReveal>
+        ))}
       </div>
     </div>
   </section>

@@ -1,8 +1,10 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import SectionReveal from '../components/SectionReveal.astro';
+import heroImg from '../assets/images/book-herophoto.JPG';
 
 const eventTypes = [
   "Sunday Service",
@@ -38,10 +40,13 @@ const budgetRanges = [
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
   <section class="relative min-h-[50vh] flex items-end pt-28 bg-black overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/book-herophoto.JPG"
+      <Image
+        src={heroImg}
         alt="Julian Dismute speaking"
         class="w-full h-full object-cover opacity-30 grayscale"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
     </div>
