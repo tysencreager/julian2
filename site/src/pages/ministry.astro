@@ -1,10 +1,17 @@
 ---
+import { Image } from 'astro:assets';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Nav from '../components/Nav.astro';
 import Footer from '../components/Footer.astro';
 import CtaMosaic from '../components/CtaMosaic.astro';
 import Marquee from '../components/Marquee.astro';
 import SectionReveal from '../components/SectionReveal.astro';
+import heroImg from '../assets/images/IMG_12.png';
+import bgBlaze from '../assets/images/ministry-blazecollective-background-faded.JPG';
+import blazeLogoWhite from '../assets/images/blaze-logo-white.png';
+import blazeImg from '../assets/images/DSC_0740.JPG';
+import wildfireImg from '../assets/images/IMG_13.png';
+import wildfireLogo from '../assets/images/wildfire-logo.png';
 ---
 
 <BaseLayout title="Ministry — Julian Dismute">
@@ -13,10 +20,13 @@ import SectionReveal from '../components/SectionReveal.astro';
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
   <section class="relative min-h-[70vh] flex items-end pt-28 bg-black overflow-hidden">
     <div class="absolute inset-0">
-      <img
-        src="/images/IMG_12.png"
+      <Image
+        src={heroImg}
         alt="Worship gathering"
         class="w-full h-full object-cover opacity-30 grayscale"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
+        loading="eager"
       />
       <div class="absolute inset-0 bg-gradient-to-t from-black via-black/60 to-transparent"></div>
     </div>
@@ -84,10 +94,12 @@ import SectionReveal from '../components/SectionReveal.astro';
   <section class="bg-zinc-950 text-white py-24 md:py-32 px-6 md:px-12 relative overflow-hidden">
     <!-- Background photo -->
     <div class="absolute inset-0 z-0">
-      <img
-        src="/images/ministry-blazecollective-background-faded.JPG"
+      <Image
+        src={bgBlaze}
         alt=""
         class="w-full h-full object-cover opacity-25"
+        widths={[800, 1280, 1920]}
+        sizes="100vw"
         loading="lazy"
       />
       <div class="absolute inset-0 bg-zinc-950/60"></div>
@@ -101,7 +113,7 @@ import SectionReveal from '../components/SectionReveal.astro';
         <div>
           <SectionReveal>
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-              <img src="/images/blaze-logo-white.png" alt="Blaze Collective" class="h-12 sm:h-16 md:h-24 w-auto" />
+              <Image src={blazeLogoWhite} alt="Blaze Collective" class="h-12 sm:h-16 md:h-24 w-auto" widths={[120, 240, 360]} sizes="240px" loading="lazy" />
               <h2 class="text-4xl sm:text-5xl md:text-7xl font-display uppercase tracking-tight">Blaze Collective</h2>
             </div>
           </SectionReveal>
@@ -133,10 +145,12 @@ import SectionReveal from '../components/SectionReveal.astro';
 
         <SectionReveal direction="right">
           <div class="relative overflow-hidden aspect-[4/5] group">
-            <img
-              src="/images/DSC_0740.JPG"
+            <Image
+              src={blazeImg}
               alt="Community gathering"
               class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 scale-105 group-hover:scale-100"
+              widths={[400, 720, 1080]}
+              sizes="(max-width: 768px) 100vw, 50vw"
               loading="lazy"
             />
             <div class="absolute bottom-0 right-0 w-20 h-20 border-r-4 border-b-4 border-brand-gold"></div>
@@ -152,10 +166,12 @@ import SectionReveal from '../components/SectionReveal.astro';
       <!-- Landscape photo spanning full width -->
       <SectionReveal>
         <div class="relative overflow-hidden aspect-[4/3] md:aspect-[21/9] group">
-          <img
-            src="/images/IMG_13.png"
+          <Image
+            src={wildfireImg}
             alt="Wildfire gathering"
             class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+            widths={[800, 1280, 1920]}
+            sizes="100vw"
             loading="lazy"
           />
           <div class="absolute top-0 left-0 w-16 h-16 border-t-4 border-l-4 border-brand-gold"></div>
@@ -167,7 +183,7 @@ import SectionReveal from '../components/SectionReveal.astro';
         <div>
           <SectionReveal>
             <div class="flex flex-col sm:flex-row items-start sm:items-center gap-4 mb-6">
-              <img src="/images/wildfire-logo.png" alt="Wildfire" class="h-16 sm:h-20 md:h-24 w-auto" />
+              <Image src={wildfireLogo} alt="Wildfire" class="h-16 sm:h-20 md:h-24 w-auto" widths={[120, 240, 360]} sizes="240px" loading="lazy" />
               <h2 class="text-5xl md:text-7xl font-display uppercase tracking-tight">
                 Wildfire
               </h2>

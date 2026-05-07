@@ -1,4 +1,7 @@
 ---
+import { Image } from 'astro:assets';
+import jslLogo from '../assets/images/jsl-logo.png';
+
 const year = new Date().getFullYear();
 const links = [
   { href: '/about', label: 'About' },
@@ -27,7 +30,7 @@ const socials = [
       <!-- Brand -->
       <div>
         <a href="/" class="block mb-4">
-          <img src="/images/JSL LOGO.png" alt="JSL Logo" class="h-12 w-auto brightness-0 invert" />
+          <Image src={jslLogo} alt="JSL Logo" class="h-12 w-auto brightness-0 invert" widths={[120, 240]} sizes="144px" loading="lazy" />
         </a>
         <p class="text-sm leading-relaxed max-w-xs">
           Calling this generation to live with conviction, follow Jesus without compromise, and lead with courageous obedience.
