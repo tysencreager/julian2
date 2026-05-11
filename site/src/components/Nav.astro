@@ -81,17 +81,16 @@ const links = [
 
     if (menuOpen) {
       nav.classList.add('text-white');
-      nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+      nav.classList.remove('bg-zinc-950/90', 'backdrop-blur-md', 'shadow-lg', 'py-4');
       return;
     }
 
     if (scrolled) {
-      nav.classList.add('bg-white/90', 'backdrop-blur-md', 'shadow-sm');
+      nav.classList.add('bg-zinc-950/90', 'backdrop-blur-md', 'shadow-lg');
       nav.classList.remove('py-6', 'md:py-8');
-      nav.classList.add('py-4');
-      nav.classList.remove('text-white');
+      nav.classList.add('py-4', 'text-white');
     } else {
-      nav.classList.remove('bg-white/90', 'backdrop-blur-md', 'shadow-sm', 'py-4');
+      nav.classList.remove('bg-zinc-950/90', 'backdrop-blur-md', 'shadow-lg', 'py-4');
       nav.classList.add('py-6', 'md:py-8');
       if (isDark) {
         nav.classList.add('text-white');
