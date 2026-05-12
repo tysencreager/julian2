@@ -68,8 +68,8 @@ const budgetRanges = [
   </section>
 
   <!-- ═══════════════ BOOKING FORM ═══════════════ -->
-  <section class="bg-zinc-950 text-white py-24 md:py-32 px-6 md:px-12">
-    <form id="booking-form" class="space-y-16 max-w-4xl mx-auto">
+  <section class="py-24 md:py-32 px-6 md:px-12 max-w-4xl mx-auto">
+    <form id="booking-form" class="space-y-16">
 
       <!-- About You -->
       <div>
@@ -82,31 +82,31 @@ const budgetRanges = [
           <SectionReveal delay={50}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Your Name *</label>
-              <input type="text" name="name" required class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Full name" />
+              <input type="text" name="name" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Full name" />
             </div>
           </SectionReveal>
           <SectionReveal delay={100}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Church / Organization *</label>
-              <input type="text" name="organization" required class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Organization name" />
+              <input type="text" name="organization" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Organization name" />
             </div>
           </SectionReveal>
           <SectionReveal delay={150}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Your Role</label>
-              <input type="text" name="role" class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Pastor, Leader, Coach, etc." />
+              <input type="text" name="role" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Pastor, Leader, Coach, etc." />
             </div>
           </SectionReveal>
           <SectionReveal delay={200}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Email *</label>
-              <input type="email" name="email" required class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="you@church.org" />
+              <input type="email" name="email" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="you@church.org" />
             </div>
           </SectionReveal>
           <SectionReveal delay={250}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Phone Number</label>
-              <input type="tel" name="phone" class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="(555) 000-0000" />
+              <input type="tel" name="phone" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="(555) 000-0000" />
             </div>
           </SectionReveal>
         </div>
@@ -123,13 +123,13 @@ const budgetRanges = [
           <SectionReveal delay={50}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Event Name *</label>
-              <input type="text" name="event_name" required class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Event name" />
+              <input type="text" name="event_name" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Event name" />
             </div>
           </SectionReveal>
           <SectionReveal delay={100}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Type of Event *</label>
-              <select name="event_type" required class="w-full bg-zinc-950 border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors text-white">
+              <select name="event_type" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors text-zinc-900">
                 <option value="" disabled selected>Select event type</option>
                 {eventTypes.map((type) => (
                   <option value={type}>{type}</option>
@@ -140,19 +140,19 @@ const budgetRanges = [
           <SectionReveal delay={150}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Event Date(s) *</label>
-              <input type="text" name="event_date" required class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Date or date range" />
+              <input type="text" name="event_date" required class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Date or date range" />
             </div>
           </SectionReveal>
           <SectionReveal delay={200}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Location (City, State)</label>
-              <input type="text" name="location" class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="City, State" />
+              <input type="text" name="location" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="City, State" />
             </div>
           </SectionReveal>
           <SectionReveal delay={250} class="md:col-span-2">
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Who will be in the room?</label>
-              <input type="text" name="audience" class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Students, adults, leaders, athletes, etc." />
+              <input type="text" name="audience" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Students, adults, leaders, athletes, etc." />
             </div>
           </SectionReveal>
         </div>
@@ -169,13 +169,13 @@ const budgetRanges = [
           <SectionReveal delay={50}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">What is your heart or goal for this event?</label>
-              <textarea name="event_goal" rows="4" class="w-full bg-transparent border-2 border-zinc-700 p-4 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors resize-none placeholder-zinc-500" placeholder="Tell us about your vision..."></textarea>
+              <textarea name="event_goal" rows="4" class="w-full bg-transparent border-2 border-zinc-300 p-4 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors resize-none placeholder-zinc-400" placeholder="Tell us about your vision..."></textarea>
             </div>
           </SectionReveal>
           <SectionReveal delay={100}>
             <div>
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">What do you feel your people need most right now?</label>
-              <textarea name="people_need" rows="4" class="w-full bg-transparent border-2 border-zinc-700 p-4 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors resize-none placeholder-zinc-500" placeholder="What is God placing on your heart?"></textarea>
+              <textarea name="people_need" rows="4" class="w-full bg-transparent border-2 border-zinc-300 p-4 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors resize-none placeholder-zinc-400" placeholder="What is God placing on your heart?"></textarea>
             </div>
           </SectionReveal>
         </div>
@@ -194,7 +194,7 @@ const budgetRanges = [
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-4">Speaking Focus</label>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
                 {speakingFocus.map((focus) => (
-                  <label class="flex items-center gap-3 p-4 border border-zinc-800 hover:border-brand-gold transition-colors cursor-pointer group">
+                  <label class="flex items-center gap-3 p-4 border border-zinc-200 hover:border-brand-gold transition-colors cursor-pointer group">
                     <input type="checkbox" name="speaking_focus" value={focus} class="w-4 h-4 accent-brand-gold" />
                     <span class="text-sm font-light group-hover:text-brand-gold transition-colors">{focus}</span>
                   </label>
@@ -207,13 +207,13 @@ const budgetRanges = [
             <SectionReveal delay={100}>
               <div>
                 <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Will travel be required? Nearest airport?</label>
-                <input type="text" name="travel" class="w-full bg-transparent border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-500" placeholder="Yes / No — nearest airport" />
+                <input type="text" name="travel" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors placeholder-zinc-400" placeholder="Yes / No — nearest airport" />
               </div>
             </SectionReveal>
             <SectionReveal delay={150}>
               <div>
                 <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-2">Will travel and lodging be provided?</label>
-                <select name="lodging" class="w-full bg-zinc-950 border-b-2 border-zinc-700 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors text-white">
+                <select name="lodging" class="w-full bg-transparent border-b-2 border-zinc-300 py-3 text-lg font-light focus:border-brand-gold focus:outline-none transition-colors">
                   <option value="" disabled selected>Select</option>
                   <option value="yes">Yes</option>
                   <option value="no">No</option>
@@ -229,7 +229,7 @@ const budgetRanges = [
               <label class="block text-xs tracking-[0.2em] uppercase font-bold text-zinc-500 mb-4">Budget Range</label>
               <div class="flex flex-wrap gap-3">
                 {budgetRanges.map((range) => (
-                  <label class="flex items-center gap-2 px-5 py-3 border border-zinc-800 hover:border-brand-gold transition-colors cursor-pointer group">
+                  <label class="flex items-center gap-2 px-5 py-3 border border-zinc-200 hover:border-brand-gold transition-colors cursor-pointer group">
                     <input type="radio" name="budget" value={range} class="accent-brand-gold" />
                     <span class="text-sm font-light group-hover:text-brand-gold transition-colors">{range}</span>
                   </label>
@@ -242,11 +242,11 @@ const budgetRanges = [
 
       <!-- Submit -->
       <SectionReveal>
-        <div class="pt-8 border-t border-zinc-800">
-          <button type="submit" class="w-full md:w-auto px-16 py-5 bg-brand-gold text-white font-bold tracking-[0.2em] uppercase hover:bg-brand-gold-dark transition-colors duration-300 text-lg">
+        <div class="pt-8 border-t border-zinc-200">
+          <button type="submit" class="w-full md:w-auto px-16 py-5 bg-black text-white font-bold tracking-[0.2em] uppercase hover:bg-brand-gold transition-colors duration-300 text-lg">
             Submit Request
           </button>
-          <p class="text-sm text-zinc-500 mt-4 font-light">
+          <p class="text-sm text-zinc-400 mt-4 font-light">
             Every invitation is prayed over and taken seriously. We'll be in touch soon.
           </p>
         </div>
