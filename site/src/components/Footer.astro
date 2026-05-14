@@ -17,6 +17,10 @@ const socials = [
   { label: 'Instagram — Wildfire', href: 'https://www.instagram.com/wildfire_dsm' },
   { label: 'Facebook', href: 'https://www.facebook.com/st.julian.dismute/' },
 ];
+const legalLinks = [
+  { href: '/privacy', label: 'Privacy Policy' },
+  { href: '/terms', label: 'Terms & Conditions' },
+];
 ---
 
 <footer class="bg-zinc-950 text-zinc-500 pt-20 pb-8 relative overflow-hidden">
@@ -62,11 +66,28 @@ const socials = [
       </div>
     </div>
 
-    <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-      <p class="text-xs tracking-widest uppercase">&copy; {year} Julian Dismute Ministries. All rights reserved.</p>
-      <a href="/booking" class="text-xs tracking-widest uppercase text-brand-gold hover:text-brand-gold-light transition-colors">
-        Invite Julian to Speak &rarr;
-      </a>
+    <div class="border-t border-zinc-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-6">
+      <p class="text-xs tracking-widest uppercase text-center md:text-left">&copy; {year} Julian Dismute Ministries. All rights reserved.</p>
+      <nav aria-label="Legal" class="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+        {legalLinks.map((link) => (
+          <a href={link.href} class="text-xs tracking-widest uppercase hover:text-brand-gold transition-colors">{link.label}</a>
+        ))}
+        <a href="/booking" class="text-xs tracking-widest uppercase text-brand-gold hover:text-brand-gold-light transition-colors">
+          Invite Julian to Speak &rarr;
+        </a>
+      </nav>
+    </div>
+
+    <div class="mt-8 pt-6 border-t border-zinc-900 text-center">
+      <p class="text-[11px] tracking-[0.2em] uppercase text-zinc-600">
+        Crafted by
+        <a
+          href="https://www.elevategrowth.solutions"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-zinc-400 hover:text-brand-gold transition-colors underline decoration-zinc-700 hover:decoration-brand-gold underline-offset-4 ml-1"
+        >Elevate Growth Solutions</a>
+      </p>
     </div>
   </div>
 </footer>

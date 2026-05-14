@@ -1,4 +1,45 @@
+# https://www.robotstxt.org/robotstxt.html
+# Allow all well-behaved crawlers full access to the site.
+
 User-agent: *
 Allow: /
+Disallow: /404
+Disallow: /404.html
 
+# Reputable AI crawlers used to surface our content in answers / generative results.
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+# Block aggressive scrapers that don't bring search traffic.
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+Host: https://juliandismute.com
 Sitemap: https://juliandismute.com/sitemap-index.xml
