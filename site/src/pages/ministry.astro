@@ -12,9 +12,56 @@ import blazeLogoWhite from '../assets/images/blaze-logo-white.png';
 import blazeImg from '../assets/images/DSC_0740.JPG';
 import wildfireImg from '../assets/images/IMG_13.png';
 import wildfireLogo from '../assets/images/wildfire-logo.png';
+
+const SITE_URL = 'https://juliandismute.com';
+const pageDescription =
+  "Blaze Collective & Wildfire — the ministry led by Julian Dismute. A grassroots movement and revival gathering calling believers to courageous, wholehearted obedience to Jesus Christ.";
+
+const ministrySchema = [
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/ministry#page`,
+    url: `${SITE_URL}/ministry`,
+    name: 'Ministry — Julian Dismute',
+    description: pageDescription,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    breadcrumb: { '@id': `${SITE_URL}/ministry#breadcrumb` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${SITE_URL}/ministry#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Ministry', item: `${SITE_URL}/ministry` },
+    ],
+  },
+  {
+    '@type': 'Organization',
+    '@id': `${SITE_URL}/ministry#blaze`,
+    name: 'Blaze Collective',
+    url: `${SITE_URL}/ministry`,
+    description:
+      'A grassroots community of believers united by a hunger for deeper faith — built on the conviction that following Jesus costs everything and is worth every bit of it.',
+    founder: { '@id': `${SITE_URL}/#julian` },
+    sameAs: ['https://www.instagram.com/wildfire_dsm'],
+    subOrganization: {
+      '@type': 'Organization',
+      '@id': `${SITE_URL}/ministry#wildfire`,
+      name: 'Wildfire',
+      description:
+        'A revival gathering hosted by Blaze Collective, centered on worship, the preaching of the Word, and a call to surrender. Began in 2024.',
+      foundingDate: '2024',
+      sameAs: ['https://www.instagram.com/wildfire_dsm'],
+    },
+  },
+];
 ---
 
-<BaseLayout title="Ministry — Julian Dismute">
+<BaseLayout
+  title="Ministry — Julian Dismute"
+  description={pageDescription}
+  schema={ministrySchema}
+>
   <Nav dark />
 
   <!-- ═══════════════ PAGE HERO ═══════════════ -->

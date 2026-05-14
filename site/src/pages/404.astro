@@ -1,0 +1,40 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Nav from '../components/Nav.astro';
+import Footer from '../components/Footer.astro';
+---
+
+<BaseLayout
+  title="Page Not Found — Julian Dismute"
+  description="The page you're looking for doesn't exist. Head back home or invite Julian to speak."
+  noindex
+>
+  <Nav dark />
+
+  <section class="relative min-h-screen min-h-[100dvh] flex items-center justify-center px-6 md:px-12 bg-black text-white overflow-hidden">
+    <div class="absolute inset-0 flex items-center justify-center opacity-[0.06] pointer-events-none overflow-hidden">
+      <span class="text-[18rem] md:text-[32rem] font-display tracking-tight text-white whitespace-nowrap leading-none">404</span>
+    </div>
+
+    <div class="relative z-10 text-center max-w-2xl mx-auto">
+      <p class="text-brand-gold text-xs tracking-[0.3em] uppercase font-bold mb-6">404 — Not Found</p>
+      <h1 class="text-5xl md:text-7xl font-display uppercase tracking-tight leading-[0.9] mb-8">
+        This page <br />
+        <span class="text-brand-gold">isn't here.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-zinc-400 font-light mb-12 leading-relaxed">
+        Looks like the link is broken or the page has moved. Try the homepage, or invite Julian to speak.
+      </p>
+      <div class="flex flex-col md:flex-row items-center justify-center gap-4">
+        <a href="/" class="w-full md:w-auto px-8 py-4 bg-brand-gold text-white font-bold tracking-[0.15em] uppercase hover:bg-brand-gold-dark transition-colors">
+          Back Home
+        </a>
+        <a href="/booking" class="w-full md:w-auto px-8 py-4 bg-transparent border border-white/30 text-white font-bold tracking-[0.15em] uppercase hover:bg-white hover:text-black transition-all">
+          Invite to Speak
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</BaseLayout>

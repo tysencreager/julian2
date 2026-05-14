@@ -1,10 +1,110 @@
 ---
+import { getImage } from 'astro:assets';
+import ogSource from '../assets/images/book-herophoto.JPG';
+import faviconSource from '../assets/images/jsl-logo.png';
+
+const SITE_NAME = 'Julian Dismute';
+const SITE_URL = 'https://juliandismute.com';
+const DEFAULT_DESCRIPTION =
+  'Julian Dismute — Christian Speaker & Minister. Calling this generation to follow Jesus with conviction, courage, and uncompromising obedience.';
+
 interface Props {
   title: string;
   description?: string;
+  ogImage?: string;
+  ogType?: 'website' | 'article' | 'profile';
+  noindex?: boolean;
+  /** Extra JSON-LD nodes (array of objects) to merge into the page graph. */
+  schema?: unknown[];
 }
 
-const { title, description = "Christian Speaker & Minister — Calling this generation to follow Jesus with everything. No compromise, no holding back." } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  ogImage,
+  ogType = 'website',
+  noindex = false,
+  schema = [],
+} = Astro.props;
+
+const canonicalPath = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const canonicalURL = new URL(canonicalPath, SITE_URL).toString();
+
+const defaultOg = await getImage({
+  src: ogSource,
+  width: 1200,
+  height: 630,
+  format: 'jpg',
+  quality: 80,
+});
+const ogImageURL = ogImage ?? new URL(defaultOg.src, SITE_URL).toString();
+
+const favicon32 = await getImage({ src: faviconSource, width: 32, height: 32, format: 'png' });
+const favicon180 = await getImage({ src: faviconSource, width: 180, height: 180, format: 'png' });
+
+const person = {
+  '@type': 'Person',
+  '@id': `${SITE_URL}/#julian`,
+  name: 'Julian Dismute',
+  url: SITE_URL,
+  image: ogImageURL,
+  jobTitle: 'Christian Speaker & Minister',
+  description:
+    'Christian speaker, minister, and digital communicator committed to proclaiming the gospel of Jesus Christ and equipping believers to live with conviction.',
+  knowsAbout: [
+    'Christian preaching',
+    'Discipleship',
+    'Youth ministry',
+    'Leadership',
+    'Revival',
+    'Fellowship of Christian Athletes',
+  ],
+  affiliation: [
+    { '@type': 'Organization', name: 'Blaze Collective', url: `${SITE_URL}/ministry` },
+    { '@type': 'Organization', name: 'Fellowship of Christian Athletes' },
+  ],
+  homeLocation: {
+    '@type': 'Place',
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: 'West Des Moines',
+      addressRegion: 'IA',
+      addressCountry: 'US',
+    },
+  },
+  sameAs: [
+    'https://www.tiktok.com/@iamjuliandismute',
+    'https://www.youtube.com/@julianspeakslife',
+    'https://www.instagram.com/iamjuliandismute/',
+    'https://www.facebook.com/st.julian.dismute/',
+  ],
+};
+
+const organization = {
+  '@type': 'Organization',
+  '@id': `${SITE_URL}/#org`,
+  name: 'Julian Dismute Ministries',
+  alternateName: 'Blaze Collective',
+  url: SITE_URL,
+  logo: new URL(favicon180.src, SITE_URL).toString(),
+  founder: { '@id': `${SITE_URL}/#julian` },
+  sameAs: person.sameAs,
+};
+
+const website = {
+  '@type': 'WebSite',
+  '@id': `${SITE_URL}/#website`,
+  url: SITE_URL,
+  name: SITE_NAME,
+  description: DEFAULT_DESCRIPTION,
+  publisher: { '@id': `${SITE_URL}/#org` },
+  inLanguage: 'en-US',
+};
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@graph': [person, organization, website, ...schema],
+};
 ---
 
 <!DOCTYPE html>
@@ -17,9 +117,47 @@ const { title, description = "Christian Speaker & Minister — Calling this gene
     <meta name="color-scheme" content="light" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+    <meta name="apple-mobile-web-app-title" content={SITE_NAME} />
+    <meta name="format-detection" content="telephone=no" />
+    <meta name="author" content="Julian Dismute" />
+    {noindex ? (
+      <meta name="robots" content="noindex, nofollow" />
+    ) : (
+      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    )}
+
     <title>{title}</title>
+
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link rel="icon" type="image/png" sizes="32x32" href={favicon32.src} />
+    <link rel="apple-touch-icon" sizes="180x180" href={favicon180.src} />
+    <link rel="manifest" href="/site.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
+    <!-- Open Graph -->
+    <meta property="og:site_name" content={SITE_NAME} />
+    <meta property="og:type" content={ogType} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:image" content={ogImageURL} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Julian Dismute — Christian Speaker & Minister" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageURL} />
+    <meta name="twitter:image:alt" content="Julian Dismute — Christian Speaker & Minister" />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+
+    <slot name="head" />
   </head>
   <body>
     <div class="grain-overlay"></div>
