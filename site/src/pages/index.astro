@@ -36,9 +36,30 @@ const speakingItems = [
     position: "",
   },
 ];
+
+const SITE_URL = 'https://juliandismute.com';
+const pageDescription =
+  "Julian Dismute is a Christian speaker and minister calling this generation to follow Jesus with conviction, courage, and uncompromising obedience. Invite Julian to speak at your church, youth event, conference, or leadership gathering.";
+
+const homeSchema = [
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/#home`,
+    url: SITE_URL,
+    name: 'Julian Dismute — Christian Speaker & Minister',
+    description: pageDescription,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    about: { '@id': `${SITE_URL}/#julian` },
+    primaryImageOfPage: { '@id': `${SITE_URL}/#julian` },
+  },
+];
 ---
 
-<BaseLayout title="Julian Dismute — Christian Speaker & Minister">
+<BaseLayout
+  title="Julian Dismute — Christian Speaker & Minister"
+  description={pageDescription}
+  schema={homeSchema}
+>
   <Nav dark />
 
   <!-- ═══════════════ HERO ═══════════════ -->

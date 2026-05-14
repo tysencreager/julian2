@@ -41,9 +41,62 @@ const audiences = [
   { label: "Christian Schools & Campus Ministries", img: audSchools, desc: "Speaking directly to students and calling the next generation to build their identity on Christ — not culture, not clout." },
   { label: "Athletic Programs & FCA Events", img: audAthletics, desc: "As someone who's lived it, Julian speaks to coaches and athletes about discipline, character, and what it means to compete for something bigger." },
 ];
+
+const SITE_URL = 'https://juliandismute.com';
+const pageDescription =
+  "Invite Julian Dismute to speak at your church, youth event, conference, school, or athletic gathering. Scripture-centered messages on courageous obedience, conviction, and calling.";
+
+const speakingSchema = [
+  {
+    '@type': 'WebPage',
+    '@id': `${SITE_URL}/speaking#page`,
+    url: `${SITE_URL}/speaking`,
+    name: 'Speaking — Julian Dismute',
+    description: pageDescription,
+    isPartOf: { '@id': `${SITE_URL}/#website` },
+    breadcrumb: { '@id': `${SITE_URL}/speaking#breadcrumb` },
+  },
+  {
+    '@type': 'BreadcrumbList',
+    '@id': `${SITE_URL}/speaking#breadcrumb`,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Home', item: SITE_URL },
+      { '@type': 'ListItem', position: 2, name: 'Speaking', item: `${SITE_URL}/speaking` },
+    ],
+  },
+  {
+    '@type': 'Service',
+    '@id': `${SITE_URL}/speaking#service`,
+    name: 'Christian Speaking & Preaching',
+    serviceType: 'Christian speaker and preacher',
+    provider: { '@id': `${SITE_URL}/#julian` },
+    areaServed: { '@type': 'Country', name: 'United States' },
+    audience: {
+      '@type': 'Audience',
+      audienceType:
+        'Churches, youth events, Christian conferences, leadership gatherings, Christian schools, athletic programs and FCA events',
+    },
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Speaking Topics',
+      itemListElement: topics.map((t) => ({
+        '@type': 'Offer',
+        itemOffered: {
+          '@type': 'Service',
+          name: t.title,
+          description: t.description,
+        },
+      })),
+    },
+  },
+];
 ---
 
-<BaseLayout title="Speaking — Julian Dismute">
+<BaseLayout
+  title="Speaking — Julian Dismute"
+  description={pageDescription}
+  schema={speakingSchema}
+>
   <Nav dark />
 
   <!-- ═══════════════ PAGE HERO ═══════════════ -->
