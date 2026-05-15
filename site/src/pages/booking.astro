@@ -337,7 +337,7 @@ const bookingSchema = [
         const data = await response.json().catch(() => null);
         const message =
           data?.errors?.map((err: { message?: string }) => err.message).filter(Boolean).join(', ') ||
-          "Something went wrong sending your request. Please try again, or email Julian's team directly.";
+          "Something went wrong sending your request. Please try again, or email contact@juliandismute.com directly.";
         if (errorEl) {
           errorEl.textContent = message;
           errorEl.classList.remove('hidden');
