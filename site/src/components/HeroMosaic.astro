@@ -20,8 +20,8 @@ const COLORS = ['bg-brand-gold', 'bg-zinc-900', 'bg-black', 'bg-zinc-800'];
 ---
 
 <div class="absolute inset-0 z-0" id="hero-mosaic">
-  <div class="absolute inset-0 grid grid-cols-4 md:grid-cols-6 grid-rows-6 md:grid-rows-4 gap-0 opacity-60" id="mosaic-grid">
-    {Array.from({ length: 24 }).map((_, i) => (
+  <div class="absolute inset-0 grid grid-cols-4 md:grid-cols-8 grid-rows-8 md:grid-rows-4 gap-0 opacity-60" id="mosaic-grid">
+    {Array.from({ length: 32 }).map((_, i) => (
       <div class="mosaic-cell w-full h-full relative overflow-hidden bg-black" data-index={i}></div>
     ))}
   </div>
